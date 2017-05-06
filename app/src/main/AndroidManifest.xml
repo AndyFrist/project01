@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.hh.gridview_recyclerview">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:name=".myApplication.AndFixApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".activity.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".activity.RecyclerActivity" />
+        <activity android:name=".activity.GridViewActivity" />
+        <activity android:name=".activity.CoordinatorLayoutActivity" />
+        <activity android:name=".activity.HotRepairActivity" />
+        <activity android:name=".activity.SlidingDrawerActivity" />
+        <activity android:name=".activity.DrawlayoutActivity" />
+        <activity android:name=".activity.SlideMenuActivity" />
+        <activity android:name=".activity.BitmapActivity" />
+        <activity android:name=".activity.BigBitMapActivity" />
+        <activity android:name=".activity.TouchListenActivity" />
+        <activity
+            android:name=".activity.RetrofitActivity"
+            android:label="@string/title_activity_retrofit"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".recyclerView.StaggeredGridLayoutActivity" />
+        <activity android:name=".recyclerView.HomeActivity" />
+        <activity android:name=".activity.RxJavaActivity" />
+        <activity android:name=".activity.FragmentActivity" />
+        <activity android:name=".activity.SurfaceViewActivity" />
+        <activity android:name=".activity.DragViewActivity"></activity>
+    </application>
+
+</manifest>

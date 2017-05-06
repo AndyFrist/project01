@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/gridview_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="GridView" />
+
+    <Button
+        android:id="@+id/recycler_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="RecyclerView" />
+
+    <Button
+        android:id="@+id/coordinatorLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="CoordinatorLayout" />
+
+    <Button
+        android:id="@+id/hot_repair"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="热修复" />
+
+    <Button
+        android:id="@+id/sliding"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="抽屉" />
+
+    <Button
+        android:id="@+id/drawlayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="侧滑面板drawlayout" />
+
+    <Button
+        android:id="@+id/slidemenu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="侧滑面板slidingmenu" />
+
+    <Button
+        android:id="@+id/bigBitmap"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="大图加载" />
+
+    <Button
+        android:id="@+id/touchListen"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="事件分发" />
+
+    <Button
+        android:id="@+id/retrofit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Retrofit+RxJ" />
+
+    <Button
+        android:id="@+id/rx_java"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="RxJava" />
+</LinearLayout>

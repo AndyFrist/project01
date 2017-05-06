@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_touch_listen"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    tools:context="com.hh.gridview_recyclerview.activity.TouchListenActivity">
+
+    <com.hh.gridview_recyclerview.View.MyTouchFrameLayout
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_centerInParent="true"
+        android:background="#287c">
+
+        <com.hh.gridview_recyclerview.View.MyTouchRelativeLayout
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_gravity="center"
+            android:background="#487c"
+            android:gravity="center">
+
+            <com.hh.gridview_recyclerview.View.MyTouchButton
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:background="#965c"
+                android:text="点我试试"/>
+        </com.hh.gridview_recyclerview.View.MyTouchRelativeLayout>
+    </com.hh.gridview_recyclerview.View.MyTouchFrameLayout>
+</RelativeLayout>

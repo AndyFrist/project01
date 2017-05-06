@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                                 xmlns:app="http://schemas.android.com/apk/res-auto"
+                                                 android:layout_width="match_parent"
+                                                 android:layout_height="match_parent"
+    >
+
+    <Button
+        android:id="@+id/btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="300dp"
+        android:layout_marginTop="300dp"
+        android:background="#FFCC00"
+        android:onClick="click"
+        android:text="Hello"
+        app:layout_behavior="com.hh.gridview_recyclerview.View.MyBehavior"/>
+
+    <com.hh.gridview_recyclerview.View.TempView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginLeft="300dp"
+        android:layout_marginTop="300dp"
+        android:background="#3366CC"/>
+</android.support.design.widget.CoordinatorLayout>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_sliding_drawer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.hh.gridview_recyclerview.activity.SlidingDrawerActivity">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="100dp">
+
+    </View>
+
+    <SlidingDrawer
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:content="@+id/content"
+        android:handle="@+id/handle"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/handle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/y_below_mark"/>
+
+        <TextView
+            android:id="@+id/content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="jaskdflafjjdffskalfjffffjfjfjfjfjjsaldfjdguoiuqweioncjxfvmncmzvnjfajkdfadjh大嫁风尚克拉的积分jfasdf案范dsalkjjlkasdjf就阿萨德据了解 拉伸的积kdflafjjdffskalfjffffjfjfjfjfjjsaldfjdguoiuqweioncjxfvmncmzvnjfajkdfadjh大嫁风尚克拉的积分jfasdf案范dsalkjjlkasdjf就阿萨德据了解 拉伸的积kdflafjjdffskalfjffffjfjfjfjfjjsaldfjdguoiuqweioncjxfvmncmzvnjfajkdfadjh大嫁风尚克拉的积分jfasdf案范dsalkjjlkasdjf就阿萨德据了解 拉伸的积kdflafjjdffskalfjffffjfjfjfjfjjsaldfjdguoiuqweioncjxfvmncmzvnjfajkdfadjh大嫁风尚克拉的积分jfasdf案范dsalkjjlkasdjf就阿萨德据了解 拉伸的积分"
+            android:background="#f00"/>
+    </SlidingDrawer>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="100dp">
+
+    </View>
+</LinearLayout>
