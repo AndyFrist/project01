@@ -3,6 +3,7 @@
     package="com.hh.gridview_recyclerview">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
 
     <application
         android:name=".myApplication.AndFixApplication"
@@ -37,7 +38,11 @@
         <activity android:name=".activity.RxJavaActivity" />
         <activity android:name=".activity.FragmentActivity" />
         <activity android:name=".activity.SurfaceViewActivity" />
-        <activity android:name=".activity.DragViewActivity"></activity>
+        <activity android:name=".activity.DragViewActivity" />
+        <activity android:name=".activity.MyseekbarActivity" />
+        <activity android:name=".activity.TestPraiseActivity" />
+        <activity android:name=".activity.LottieActivity" />
+        <activity android:name=".activity.SIMCodeActivity"></activity>
     </application>
 
 </manifest>

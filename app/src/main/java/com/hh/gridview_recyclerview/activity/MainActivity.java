@@ -23,7 +23,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
     private Button retrofit;
     private Button rx_java;
 
-    private Button fragment, surfaceview, drawView;
+    private Button fragment, surfaceview, drawView,myseekBar,touchlove,lottie,simcode;
 
 
     private Intent intent;
@@ -50,6 +50,10 @@ public class MainActivity extends Activity implements View.OnClickListener {
         fragment = (Button) findViewById(R.id.fragment);
         surfaceview = (Button) findViewById(R.id.surfaceview);
         drawView = (Button) findViewById(R.id.drawView);
+        myseekBar = (Button) findViewById(R.id.myseekBar);
+        touchlove = (Button) findViewById(R.id.touchlove);
+        lottie = (Button) findViewById(R.id.lottie);
+        simcode = (Button) findViewById(R.id.simcode);
 
         gridview_id.setOnClickListener(this);
         recycler_id.setOnClickListener(this);
@@ -65,6 +69,10 @@ public class MainActivity extends Activity implements View.OnClickListener {
         fragment.setOnClickListener(this);
         surfaceview.setOnClickListener(this);
         drawView.setOnClickListener(this);
+        myseekBar.setOnClickListener(this);
+        touchlove.setOnClickListener(this);
+        lottie.setOnClickListener(this);
+        simcode.setOnClickListener(this);
     }
 
     @Override
@@ -134,6 +142,22 @@ public class MainActivity extends Activity implements View.OnClickListener {
             case R.id.drawView:
                 intent.setClass(this, DragViewActivity.class);
                 IntentUtils.getInstance().startActivity(this, intent);
+                break;
+            case R.id.myseekBar:
+                intent.setClass(this, MyseekbarActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.touchlove:
+                intent.setClass(this, TestPraiseActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.lottie:
+                intent.setClass(this, LottieActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.simcode:
+                intent.setClass(this, SIMCodeActivity.class);
+                startActivity(intent);
                 break;
         }
     }

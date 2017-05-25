@@ -23,19 +23,26 @@
         android:layout_height="wrap_content" />
 
     <Button
-        android:id="@+id/hot_repair"
+        android:id="@+id/myseekBar"
+        android:text="自定义seekbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
     <Button
+        android:id="@+id/touchlove"
+        android:text="点击爱心"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
     <Button
+        android:id="@+id/lottie"
+        android:text="lottie动画框架"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
     <Button
+        android:id="@+id/simcode"
+        android:text="运营商代号"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
