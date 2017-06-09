@@ -37,7 +37,15 @@ public class FirstFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         System.out.println("Fragment" + "onCreateView");
-        return inflater.inflate(R.layout.fragment_first, container, false);
+        View view = inflater.inflate(R.layout.fragment_first, container, false);
+        view.findViewById(R.id.fragment_btn);
+        return view;
+    }
+
+    @Override
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        System.out.println("Fragment" + "onViewCreated");
     }
 
     @Override
@@ -70,4 +78,15 @@ public class FirstFragment extends Fragment {
         System.out.println("Fragment" + "onStop");
     }
 
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        System.out.println("Fragment" + "onDestroyView");
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        System.out.println("Fragment" + "onDestroy");
+    }
 }

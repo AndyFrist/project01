@@ -5,7 +5,8 @@
     tools:context="com.hh.gridview_recyclerview.fragment.FirstFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <Button
+        android:id="@+id/fragment_btn"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:text="@string/hello_blank_fragment" />
