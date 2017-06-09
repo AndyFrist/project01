@@ -48,6 +48,7 @@ public class FirstFragment extends Fragment {
         System.out.println("Fragment" + "onViewCreated");
     }
 
+
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
@@ -82,6 +83,11 @@ public class FirstFragment extends Fragment {
     public void onDestroyView() {
         super.onDestroyView();
         System.out.println("Fragment" + "onDestroyView");
+    }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
     }
 
     @Override
