@@ -42,7 +42,8 @@
         <activity android:name=".activity.MyseekbarActivity" />
         <activity android:name=".activity.TestPraiseActivity" />
         <activity android:name=".activity.LottieActivity" />
-        <activity android:name=".activity.SIMCodeActivity"></activity>
+        <activity android:name=".activity.SIMCodeActivity" />
+        <activity android:name=".activity.Camera2Activity"></activity>
     </application>
 
 </manifest>
