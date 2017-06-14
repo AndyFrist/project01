@@ -26,6 +26,11 @@ public class FragmentActivity extends SlidingActivity {
         transaction.commit();
     }
 
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        System.out.println("Activity" + "onRestart");
+    }
 
     @Override
     protected void onStart() {
