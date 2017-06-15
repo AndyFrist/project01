@@ -7,7 +7,7 @@ android {
         release {
             keyAlias 'android.keystore'
             keyPassword 'heremi'
-            storeFile file('C:/Users/Administrator/Desktop/gradle/海米尔_gradle/android.keystore')
+            storeFile file('C:/Users/Administrator/Desktop/android.keystore')
             storePassword 'heremi'
         }
     }

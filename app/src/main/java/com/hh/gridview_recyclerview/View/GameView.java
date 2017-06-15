@@ -16,7 +16,7 @@ import com.hh.gridview_recyclerview.R;
 /**
  * Created by Administrator on 2017/4/10.
  */
-
+//想让 SurfaceHolder.Callback 生效必须SurfaceHolder.addcallBack(SurfaceHolder.Callback）
 public class GameView extends SurfaceView implements SurfaceHolder.Callback {
     private boolean flag;
     SurfaceHolder holder;
