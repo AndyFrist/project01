@@ -23,7 +23,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
     private Button retrofit;
     private Button rx_java;
 
-    private Button fragment, surfaceview, drawView,myseekBar,touchlove,lottie,simcode,camera2btn;
+    private Button fragment, surfaceview, drawView,myseekBar,touchlove,lottie,simcode,camera2btn,tth;
 
 
     private Intent intent;
@@ -55,6 +55,8 @@ public class MainActivity extends Activity implements View.OnClickListener {
         lottie = (Button) findViewById(R.id.lottie);
         simcode = (Button) findViewById(R.id.simcode);
         camera2btn = (Button) findViewById(R.id.camera2btn);
+        tth = (Button) findViewById(R.id.tth);
+
 
         gridview_id.setOnClickListener(this);
         recycler_id.setOnClickListener(this);
@@ -75,6 +77,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
         lottie.setOnClickListener(this);
         simcode.setOnClickListener(this);
         camera2btn.setOnClickListener(this);
+        tth.setOnClickListener(this);
     }
 
     @Override
@@ -163,6 +166,10 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 break;
             case R.id.camera2btn:
                 intent.setClass(this, Camera2Activity.class);
+                startActivity(intent);
+                break;
+            case R.id.tth:
+                intent.setClass(this, TTHActivity.class);
                 startActivity(intent);
                 break;
         }

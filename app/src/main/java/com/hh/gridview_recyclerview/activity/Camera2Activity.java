@@ -9,7 +9,7 @@ import com.hh.gridview_recyclerview.R;
 import com.hh.gridview_recyclerview.View.MyTexureView;
 
 public class Camera2Activity extends AppCompatActivity {
-
+    private static final String TAG = "Camera2Activity";
     private MyTexureView my_surfacetexure;
     @Override
     protected void onCreate(Bundle savedInstanceState) {

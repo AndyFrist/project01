@@ -43,7 +43,8 @@
         <activity android:name=".activity.TestPraiseActivity" />
         <activity android:name=".activity.LottieActivity" />
         <activity android:name=".activity.SIMCodeActivity" />
-        <activity android:name=".activity.Camera2Activity"></activity>
+        <activity android:name=".activity.Camera2Activity" />
+        <activity android:name=".activity.TTHActivity"></activity>
     </application>
 
 </manifest>
