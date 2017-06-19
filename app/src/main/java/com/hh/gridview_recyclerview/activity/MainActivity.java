@@ -26,7 +26,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     private Button retrofit;
     private Button rx_java;
 
-    private Button fragment, surfaceview, drawView,myseekBar,touchlove,lottie,simcode,camera2btn,tth;
+    private Button fragment, surfaceview, drawView, myseekBar, touchlove, lottie, simcode, camera2btn, camerabtn, tth;
 
 
     private Intent intent;
@@ -58,6 +58,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         lottie = (Button) findViewById(R.id.lottie);
         simcode = (Button) findViewById(R.id.simcode);
         camera2btn = (Button) findViewById(R.id.camera2btn);
+        camerabtn = (Button) findViewById(R.id.camerabtn);
         tth = (Button) findViewById(R.id.tth);
 
 
@@ -80,6 +81,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         lottie.setOnClickListener(this);
         simcode.setOnClickListener(this);
         camera2btn.setOnClickListener(this);
+        camerabtn.setOnClickListener(this);
         tth.setOnClickListener(this);
     }
 
@@ -168,6 +170,10 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 startActivity(intent);
                 break;
             case R.id.camera2btn:
+                intent.setClass(this, Camera2Activity.class);
+                startActivity(intent);
+                break;
+            case R.id.camerabtn:
                 intent.setClass(this, CameraActivity.class);
                 startActivity(intent);
                 break;
@@ -181,7 +187,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     @Override
     protected void onResume() {
         super.onResume();
-        BaseActivity.requestPermissionss(new String[]{Manifest.permission.CAMERA}, new PermissionListener(){
+        BaseActivity.requestPermissionss(new String[]{Manifest.permission.CAMERA}, new PermissionListener() {
 
             @Override
             public void onGranted() {

@@ -50,6 +50,12 @@
         android:id="@+id/camera2btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:text="相机2" />
+
+    <Button
+        android:id="@+id/camerabtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:text="相机" />
 
     <Button
@@ -58,9 +64,6 @@
         android:layout_height="wrap_content"
         android:text="文字转语音" />
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
 
     <Button
         android:layout_width="match_parent"

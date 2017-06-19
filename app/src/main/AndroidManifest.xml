@@ -48,6 +48,7 @@
             android:name=".activity.CameraActivity"
             android:theme="@style/activityTheme" />
         <activity android:name=".activity.TTHActivity" />
+        <activity android:name=".activity.Camera2Activity"></activity>
     </application>
 
 </manifest>
