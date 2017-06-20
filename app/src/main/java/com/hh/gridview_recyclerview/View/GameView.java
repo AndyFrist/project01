@@ -41,6 +41,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
             while (flag) {
                 try {
                     drawUI();
+                    sleep(300);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }

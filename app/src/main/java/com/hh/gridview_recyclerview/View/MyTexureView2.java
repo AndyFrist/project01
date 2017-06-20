@@ -1,25 +1,28 @@
 package com.hh.gridview_recyclerview.View;
 
+import android.Manifest;
 import android.content.Context;
+import android.content.pm.PackageManager;
 import android.graphics.SurfaceTexture;
-import android.hardware.Camera;
+import android.hardware.camera2.CameraAccessException;
+import android.hardware.camera2.CameraDevice;
+import android.hardware.camera2.CameraManager;
+import android.support.v4.app.ActivityCompat;
 import android.view.TextureView;
-
-import java.io.IOException;
 
 /**
  * Created by Administrator on 2017/6/14.
  */
 
-public class MyTexureView extends TextureView implements TextureView.SurfaceTextureListener {
-    private Camera mCamera;
+public class MyTexureView2 extends TextureView implements TextureView.SurfaceTextureListener {
+    private CameraDevice cameraDevice;
     private Context context;
     private int mRatioWidth = 0;
     private int mRatioHeight = 0;
 
-    public MyTexureView(Context context, Camera camera) {
+    public MyTexureView2(Context context, CameraDevice cameraDevice) {
         super(context);
-        this.mCamera = camera;
+        this.cameraDevice = cameraDevice;
         this.context = context;
     }
 
@@ -47,13 +50,6 @@ public class MyTexureView extends TextureView implements TextureView.SurfaceText
 
     @Override
     public void onSurfaceTextureAvailable(SurfaceTexture surfaceTexture, int width, int height) {
-        try {
-            mCamera.setPreviewTexture(surfaceTexture);
-            mCamera.setDisplayOrientation(90);
-            mCamera.startPreview();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
     }
 
     @Override
@@ -63,12 +59,6 @@ public class MyTexureView extends TextureView implements TextureView.SurfaceText
 
     @Override
     public boolean onSurfaceTextureDestroyed(SurfaceTexture surfaceTexture) {
-        if (mCamera != null) {
-            mCamera.stopPreview();
-            mCamera.setPreviewCallback(null);
-            mCamera.release();
-            mCamera = null;
-        }
         return true;
     }
 

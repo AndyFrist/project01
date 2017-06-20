@@ -1,16 +1,19 @@
 package com.hh.gridview_recyclerview.activity;
 
-import android.app.Activity;
+import android.Manifest;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
 import com.hh.gridview_recyclerview.R;
+import com.hh.gridview_recyclerview.myinteraface.PermissionListener;
 import com.hh.gridview_recyclerview.recyclerView.HomeActivity;
 import com.hh.gridview_recyclerview.utils.IntentUtils;
 
-public class MainActivity extends Activity implements View.OnClickListener {
+import java.util.ArrayList;
+
+public class MainActivity extends BaseActivity implements View.OnClickListener {
     private Button gridview_id;
     private Button recycler_id;
     private Button coordinatorLayout;
@@ -23,7 +26,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
     private Button retrofit;
     private Button rx_java;
 
-    private Button fragment, surfaceview, drawView,myseekBar,touchlove,lottie,simcode,camera2btn;
+    private Button fragment, surfaceview, drawView, myseekBar, touchlove, lottie, simcode, camera2btn, camerabtn, tth;
 
 
     private Intent intent;
@@ -55,6 +58,9 @@ public class MainActivity extends Activity implements View.OnClickListener {
         lottie = (Button) findViewById(R.id.lottie);
         simcode = (Button) findViewById(R.id.simcode);
         camera2btn = (Button) findViewById(R.id.camera2btn);
+        camerabtn = (Button) findViewById(R.id.camerabtn);
+        tth = (Button) findViewById(R.id.tth);
+
 
         gridview_id.setOnClickListener(this);
         recycler_id.setOnClickListener(this);
@@ -75,6 +81,8 @@ public class MainActivity extends Activity implements View.OnClickListener {
         lottie.setOnClickListener(this);
         simcode.setOnClickListener(this);
         camera2btn.setOnClickListener(this);
+        camerabtn.setOnClickListener(this);
+        tth.setOnClickListener(this);
     }
 
     @Override
@@ -165,6 +173,31 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 intent.setClass(this, Camera2Activity.class);
                 startActivity(intent);
                 break;
+            case R.id.camerabtn:
+                intent.setClass(this, CameraActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.tth:
+                intent.setClass(this, TTHActivity.class);
+                startActivity(intent);
+                break;
         }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        BaseActivity.requestPermissionss(new String[]{Manifest.permission.CAMERA}, new PermissionListener() {
+
+            @Override
+            public void onGranted() {
+
+            }
+
+            @Override
+            public void onDenied(ArrayList<String> deniedPermission) {
+
+            }
+        });
     }
 }

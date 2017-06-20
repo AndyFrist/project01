@@ -8,56 +8,62 @@
         android:id="@+id/fragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="fragment生命周期"/>
+        android:text="fragment生命周期" />
 
     <Button
         android:id="@+id/surfaceview"
-        android:text="surfaceview"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:text="surfaceview" />
 
     <Button
         android:id="@+id/drawView"
-        android:text="拖动View"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:text="拖动View" />
 
     <Button
         android:id="@+id/myseekBar"
-        android:text="自定义seekbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:text="自定义seekbar" />
 
     <Button
         android:id="@+id/touchlove"
-        android:text="点击爱心"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:text="点击爱心" />
 
     <Button
         android:id="@+id/lottie"
-        android:text="lottie动画框架"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:text="lottie动画框架" />
 
     <Button
         android:id="@+id/simcode"
-        android:text="运营商代号"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:text="运营商代号" />
 
     <Button
         android:id="@+id/camera2btn"
-        android:text="相机"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:text="相机2" />
 
     <Button
+        android:id="@+id/camerabtn"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:text="相机" />
+
     <Button
+        android:id="@+id/tth"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:text="文字转语音" />
+
 
     <Button
         android:layout_width="match_parent"
