@@ -43,7 +43,7 @@ public class RetrofitActivity extends AppCompatActivity implements View.OnClickL
         call.enqueue(new retrofit2.Callback<Book>() {
             @Override
             public void onResponse(Call<Book> call, retrofit2.Response<Book> response) {
-                text.setText(response.body().toString() + "");
+                text.setText(response.body().toString());
             }
 
             @Override
