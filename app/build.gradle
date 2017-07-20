@@ -7,14 +7,14 @@ android {
         release {
             keyAlias 'android.keystore'
             keyPassword 'heremi'
-            storeFile file('C:/Users/Administrator/Desktop/android.keystore')
+            storeFile file('../doc/snoppa_android.jks')
             storePassword 'heremi'
         }
     }
 
     defaultConfig {
         applicationId "com.hh.gridview_recyclerview"
-        minSdkVersion 23
+        minSdkVersion 18
         targetSdkVersion 24
         versionCode 1
         versionName "1.0"
