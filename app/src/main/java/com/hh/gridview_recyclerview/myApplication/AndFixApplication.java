@@ -2,6 +2,8 @@ package com.hh.gridview_recyclerview.myApplication;
 
 import android.app.Activity;
 import android.app.Application;
+import android.graphics.Bitmap;
+import android.util.LruCache;
 import android.view.WindowManager;
 
 import com.alipay.euler.andfix.patch.PatchManager;
@@ -64,4 +66,16 @@ public class AndFixApplication extends Application {
         return wmParams;
     }
 
+
+    static final int maxMenmory = (int) Runtime.getRuntime().maxMemory() / 1024;
+    // 计算缓存内存大小
+    static int cacheSize = maxMenmory / 4;
+    // 图片缓存（内存缓存）
+    public static LruCache<String, Bitmap> lruCache = new LruCache<String, Bitmap>(cacheSize) {
+        @Override
+        protected int sizeOf(String key, Bitmap value) {
+            // 计算图片大小
+            return value.getRowBytes() * value.getHeight() / 1024;
+        }
+    };
 }
