@@ -47,7 +47,6 @@ public class MyMapFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 i = i % 5;
-
                 switch (i) {
                     case 0:
                         googleMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
