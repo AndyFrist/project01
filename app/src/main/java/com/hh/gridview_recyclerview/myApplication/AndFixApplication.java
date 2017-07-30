@@ -2,7 +2,10 @@ package com.hh.gridview_recyclerview.myApplication;
 
 import android.app.Activity;
 import android.app.Application;
+import android.content.Context;
 import android.graphics.Bitmap;
+import android.support.multidex.MultiDex;
+import android.support.multidex.MultiDexApplication;
 import android.util.LruCache;
 import android.view.WindowManager;
 
@@ -16,7 +19,7 @@ import java.util.ArrayList;
  * 注释：
  */
 
-public class AndFixApplication extends Application {
+public class AndFixApplication extends MultiDexApplication {
     public static PatchManager mPatchManager;
 
     @Override
@@ -33,8 +36,6 @@ public class AndFixApplication extends Application {
 
         // 加载已经添加到PatchManager中的patch
         mPatchManager.loadPatch();
-
-
     }
 
     private static ArrayList<Activity> activityArrayList = new ArrayList<>();
@@ -78,4 +79,10 @@ public class AndFixApplication extends Application {
             return value.getRowBytes() * value.getHeight() / 1024;
         }
     };
+
+    @Override
+    protected void attachBaseContext(Context base) {
+        super.attachBaseContext(base);
+        MultiDex.install(this);
+    }
 }

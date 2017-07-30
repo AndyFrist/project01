@@ -26,7 +26,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     private Button retrofit;
     private Button rx_java;
 
-    private Button fragment, surfaceview, drawView, myseekBar, touchlove, lottie, simcode, camera2btn, camerabtn, tth,windowmanger,six_principle;
+    private Button fragment,map_btn,surfaceview, drawView, myseekBar, touchlove, lottie, simcode, camera2btn, camerabtn, tth,windowmanger,six_principle;
 
 
     private Intent intent;
@@ -62,8 +62,10 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         tth = (Button) findViewById(R.id.tth);
         windowmanger = (Button) findViewById(R.id.windowmanger);
         six_principle = (Button) findViewById(R.id.six_principle);
+        map_btn = (Button) findViewById(R.id.map_btn);
 
 
+        map_btn.setOnClickListener(this);
         gridview_id.setOnClickListener(this);
         recycler_id.setOnClickListener(this);
         coordinatorLayout.setOnClickListener(this);
@@ -108,7 +110,10 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 intent.setClass(this, CoordinatorLayoutActivity.class);
                 startActivity(intent);
                 break;
-
+            case R.id.map_btn:
+                intent.setClass(this, MapActivity.class);
+                startActivity(intent);
+                break;
             case R.id.hot_repair:
                 intent.setClass(this, HotRepairActivity.class);
                 startActivity(intent);
