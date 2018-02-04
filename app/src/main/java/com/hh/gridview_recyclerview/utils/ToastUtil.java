@@ -4,6 +4,8 @@ import android.content.Context;
 import android.os.Handler;
 import android.widget.Toast;
 
+import com.hh.gridview_recyclerview.myApplication.AndFixApplication;
+
 /**
  * Toast工具 防止toast点击多次显示
  * */
@@ -30,5 +32,17 @@ public class ToastUtil {
 
     public static void showToast(Context mContext, int resId, int duration) {
         showToast(mContext, mContext.getResources().getString(resId), duration);
+    }
+
+    public static void showToast( String text) {
+
+        mHandler.removeCallbacks(r);
+        if (mToast != null)
+            mToast.setText(text);
+        else
+            mToast = Toast.makeText(AndFixApplication.getContext(), text, Toast.LENGTH_SHORT);
+        mHandler.postDelayed(r, 3000);
+
+        mToast.show();
     }
 }

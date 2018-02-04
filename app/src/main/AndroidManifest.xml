@@ -8,6 +8,10 @@
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
 
     <application
         android:name=".myApplication.AndFixApplication"
@@ -21,7 +25,6 @@
         <meta-data
             android:name="com.google.android.maps.v2.API_KEY"
             android:value="AIzaSyB9Z8bTofZy5yynC72Thrn720Xuh4r2k28" />
-
         <meta-data
             android:name="com.google.android.gms.vision"
             android:value="@integer/google_play_services_version" />
@@ -48,7 +51,9 @@
             android:label="@string/title_activity_retrofit"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".recyclerView.StaggeredGridLayoutActivity" />
-        <activity android:name=".recyclerView.HomeActivity" />
+        <activity
+            android:name=".recyclerView.HomeActivity"
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar" />
         <activity android:name=".activity.RxJavaActivity" />
         <activity android:name=".activity.FragmentActivity" />
         <activity android:name=".activity.SurfaceViewActivity" />
@@ -68,6 +73,20 @@
             android:label="@string/title_activity_principle"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".activity.MapActivity" />
+        <activity android:name=".activity.LocationActivity" />
+        <activity android:name=".activity.Main2Activity" />
+        <activity android:name=".activity.HnadlerThreadActivity" />
+        <activity android:name=".activity.TabLauyoutActivity" />
+        <activity android:name=".activity.MyrecycleviewActivity" />
+        <activity android:name=".materialdesign.MaterialDesignActivity" />
+        <activity android:name=".activity.OkhttpActivity" />
+        <activity android:name=".activity.RingProcessActivity" />
+        <activity android:name=".activity.BrokenlineActivity" />
+        <activity android:name=".activity.MyImageViewActivity" />
+        <activity android:name=".activity.waterActivity" />
+        <activity android:name=".activity.NumberPickActivity" />
+        <activity android:name=".activity.SlideActivity"/>
+        <activity android:name=".activity.IndexActivity"/>
     </application>
 
 </manifest>

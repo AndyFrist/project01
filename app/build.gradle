@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 24
-    buildToolsVersion "25.0.0"
+    buildToolsVersion '27.0.3'
     signingConfigs {
         release {
             keyAlias 'android.keystore'
@@ -14,8 +14,8 @@ android {
 
     defaultConfig {
         applicationId "com.hh.gridview_recyclerview"
-        minSdkVersion 18
-        targetSdkVersion 24
+        minSdkVersion 19
+        targetSdkVersion 27
         versionCode 1
         versionName "1.0"
         multiDexEnabled true
@@ -34,8 +34,8 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile 'com.android.support:appcompat-v7:24.1.1'
-    compile 'com.android.support:design:24.0.0-alpha1'
+    compile 'com.android.support:appcompat-v7:24.2.1'
+    compile 'com.android.support:design:24.2.1'
     compile 'com.alipay.euler:andfix:0.4.0@aar'
     compile 'com.airbnb.android:lottie:1.0.1'
     compile 'com.squareup.retrofit2:retrofit:2.1.0'
@@ -50,4 +50,5 @@ dependencies {
     compile 'com.android.support:multidex:1.0.1'
     compile 'com.google.android.gms:play-services-plus:10.2.6'
     testCompile 'junit:junit:4.12'
+    compile files('libs/pinyin4j-2.5.0.jar')
 }

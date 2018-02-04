@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    tools:context="com.hh.gridview_recyclerview.activity.Main2Activity">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btn_left_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="gridview" />
+
+        <Button
+            android:id="@+id/btn_left_3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="手机定位" />
+
+        <Button
+            android:id="@+id/btn_left_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Recycler" />
+
+
+        <Button
+            android:id="@+id/btn_left_4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="activity生命周期" />
+
+        <Button
+            android:id="@+id/btn_left_5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TabLayoutActivity" />
+
+        <Button
+            android:id="@+id/btn_left_6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="RecyclerView" />
+
+        <Button
+            android:id="@+id/btn_left_7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="MaterialDesig" />
+
+        <Button
+            android:id="@+id/okhttp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="okhttp" />
+
+        <Button
+            android:id="@+id/myprocess"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="myprocess" />
+
+        <Button
+            android:id="@+id/brokenline"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="折线图" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/myimageview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="圆形图片" />
+
+        <Button
+            android:id="@+id/water_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="水波纹效果" />
+
+        <Button
+            android:id="@+id/numberpick"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="numberpick" />
+
+        <Button
+            android:id="@+id/swipemenu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="侧滑面板+HandlerThread" />
+
+        <Button
+            android:id="@+id/indexbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="快速索引" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="按钮" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="按钮" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="按钮" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="按钮" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="按钮" />
+    </LinearLayout>
+</LinearLayout>

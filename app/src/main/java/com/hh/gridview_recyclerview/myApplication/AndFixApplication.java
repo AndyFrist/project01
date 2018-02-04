@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.Application;
 import android.content.Context;
 import android.graphics.Bitmap;
+import android.graphics.Typeface;
 import android.support.multidex.MultiDex;
 import android.support.multidex.MultiDexApplication;
 import android.util.LruCache;
@@ -11,6 +12,7 @@ import android.view.WindowManager;
 
 import com.alipay.euler.andfix.patch.PatchManager;
 
+import java.lang.reflect.Field;
 import java.util.ArrayList;
 
 /**
@@ -25,7 +27,7 @@ public class AndFixApplication extends MultiDexApplication {
     @Override
     public void onCreate() {
         super.onCreate();
-
+        appContext = getApplicationContext();
         // 初始化patch管理类
         mPatchManager = new PatchManager(this);
 
@@ -36,6 +38,8 @@ public class AndFixApplication extends MultiDexApplication {
 
         // 加载已经添加到PatchManager中的patch
         mPatchManager.loadPatch();
+        //设置字体
+        initfonts();
     }
 
     private static ArrayList<Activity> activityArrayList = new ArrayList<>();
@@ -51,6 +55,12 @@ public class AndFixApplication extends MultiDexApplication {
     public static Activity getTopActivity() {
 
         return activityArrayList.get(activityArrayList.size() - 1);
+    }
+
+    private static Context appContext;
+
+    public static Context getContext() {
+        return appContext;
     }
 
     /**
@@ -84,5 +94,19 @@ public class AndFixApplication extends MultiDexApplication {
     protected void attachBaseContext(Context base) {
         super.attachBaseContext(base);
         MultiDex.install(this);
+    }
+
+    public static Typeface TypeFaceYaHei;
+    private void initfonts() {
+        TypeFaceYaHei = Typeface.createFromAsset(getAssets(), "fonts/PingFang Bold.ttf");
+        try {
+            Field field = Typeface.class.getDeclaredField("MONOSPACE");
+            field.setAccessible(true);
+            field.set(null, TypeFaceYaHei);
+        } catch (NoSuchFieldException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        }
     }
 }
