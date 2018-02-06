@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.hh.gridview_recyclerview.activity.MyImageViewActivity">
+
+    <com.hh.gridview_recyclerview.View.RoundImageView
+        android:id="@+id/rouond_iv"
+        android:layout_width="133dp"
+        android:layout_height="133dp"
+        app:drawable="@drawable/c" />
+
+    <com.hh.gridview_recyclerview.View.MyImageView
+        android:layout_width="203dp"
+        android:layout_height="203dp"
+        app:drawable="@drawable/c"
+        app:lb="3dp"
+        app:lt="3dp"
+        app:rb="3dp"
+        app:rt="3dp" />
+
+    <LinearLayout
+        android:layout_width="200dp"
+        android:background="@drawable/round_30"
+        android:layout_height="200dp">
+        <ImageView
+            android:src="@drawable/aa"
+
+            android:layerType="hardware"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+
+
+</LinearLayout>
