@@ -25,7 +25,6 @@ public class SIMCodeActivity extends AppCompatActivity implements ActivityCompat
         if (permissionCheck != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_PHONE_STATE}, REQUEST_READ_PHONE_STATE);
         } else {
-            //TODO
             text.setText(getCode());
         }
 
@@ -35,7 +34,6 @@ public class SIMCodeActivity extends AppCompatActivity implements ActivityCompat
         switch (requestCode) {
             case REQUEST_READ_PHONE_STATE:
                 if ((grantResults.length > 0) && (grantResults[0] == PackageManager.PERMISSION_GRANTED)) {
-                    //TODO
                     text.setText(getCode());
                 }
                 break;
