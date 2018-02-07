@@ -3,6 +3,7 @@ package com.hh.gridview_recyclerview.View;
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.v4.view.ViewCompat;
 import android.support.v4.widget.ViewDragHelper;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
@@ -54,9 +55,63 @@ public class DrawQQLayout extends FrameLayout {
                 return left;
             }
 
+            @Override
+            public void onViewPositionChanged(View changedView, int left, int top, int dx, int dy) {
+                super.onViewPositionChanged(changedView, left, top, dx, dy);
 
+            }
+
+            @Override
+            public void onViewReleased(View releasedChild, float xvel, float yvel) {
+                super.onViewReleased(releasedChild, xvel, yvel);
+                if (xvel == 0 && mainMenu.getLeft() > range / 2) {
+                    open();
+                } else if (xvel > 0) {
+                    open();
+                }else{
+                    close();
+                }
+            }
         };
         viewDragHelper = ViewDragHelper.create(this, callback);
+    }
+
+    @Override
+    public void computeScroll() {
+        super.computeScroll();
+        if (viewDragHelper.continueSettling(true)) {
+            ViewCompat.postInvalidateOnAnimation(this);
+        }
+    }
+
+    private void close() {
+        close(true);
+    }
+
+    private void close(boolean smooth) {
+        int finalLeft = 0;
+        if (smooth) {
+            if (viewDragHelper.smoothSlideViewTo(mainMenu, finalLeft, 0)) {
+                ViewCompat.postInvalidateOnAnimation(this);
+            }
+        }else{
+            mainMenu.layout(finalLeft,0,finalLeft + mWidth,mHeight);
+        }
+    }
+
+    private void open() {
+        open(true);
+    }
+
+    private void open(boolean smooth) {
+        int finalLeft = range;
+        if (smooth) {
+            if (viewDragHelper.smoothSlideViewTo(mainMenu, finalLeft, 0)) {
+                ViewCompat.postInvalidateOnAnimation(this);
+            }
+        } else {
+            mainMenu.layout(finalLeft,0,finalLeft + mWidth,mHeight);
+        }
     }
 
     private int fixLeft(int left) {
