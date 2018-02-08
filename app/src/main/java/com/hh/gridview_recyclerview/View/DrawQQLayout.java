@@ -11,6 +11,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 
+import com.hh.gridview_recyclerview.utils.LogUtil;
+
 /**
  * Created by xuxiaopeng on 2018/2/7.
  */
@@ -59,6 +61,17 @@ public class DrawQQLayout extends FrameLayout {
             public void onViewPositionChanged(View changedView, int left, int top, int dx, int dy) {
                 super.onViewPositionChanged(changedView, left, top, dx, dy);
 
+                int newleft = left;
+                if (changedView == leftMenu) {
+                    newleft = mainMenu.getLeft() + dx;
+                    newleft = fixLeft(newleft);
+
+                    leftMenu.layout(0, 0, mWidth, mHeight);
+                    mainMenu.layout(newleft, 0, newleft + mWidth, mHeight);
+                }
+
+                setanimation(newleft);
+                invalidate();
             }
 
             @Override
@@ -74,6 +87,21 @@ public class DrawQQLayout extends FrameLayout {
             }
         };
         viewDragHelper = ViewDragHelper.create(this, callback);
+    }
+
+    private void setanimation(int newleft) {
+        float persent = newleft * 1.0f / range;
+        LogUtil.d(TAG, "百分比" + persent);
+        //伴随动画
+        // 1、左面板：缩放动画，平移动画，透明度变化
+        //缩放动画 0.5 》》0.5 + 0.5 * persent
+        leftMenu.setScaleX(0.5f + 0.5f * persent);
+        leftMenu.setScaleY(0.5f + 0.5f * persent);
+        //平移动画 -mWidth >>> 0
+        leftMenu.setTranslationX(-0.5f * mWidth + persent * 0.5f * mWidth);
+        //透明度0.5》》1.0
+        leftMenu.setAlpha(0.5f + 0.5f * persent);
+
     }
 
     @Override
