@@ -102,6 +102,10 @@ public class DrawQQLayout extends FrameLayout {
         //透明度0.5》》1.0
         leftMenu.setAlpha(0.5f + 0.5f * persent);
 
+
+        // 2、主面板：缩放动画
+        mainMenu.setScaleX(1f - 0.2f * persent);
+        mainMenu.setScaleY(1f - 0.2f * persent);
     }
 
     @Override
