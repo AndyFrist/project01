@@ -21,7 +21,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <!-- 谷歌地图a 4 -->
+        <!-- 谷歌地图a 6 -->
         <meta-data
             android:name="com.google.android.maps.v2.API_KEY"
             android:value="AIzaSyB9Z8bTofZy5yynC72Thrn720Xuh4r2k28" />
