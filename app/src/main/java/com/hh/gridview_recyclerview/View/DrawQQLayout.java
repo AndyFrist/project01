@@ -12,17 +12,15 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 
 import com.hh.gridview_recyclerview.utils.LogUtil;
-import com.hp.hpl.sparta.xpath.TrueExpr;
 
 /**
- * Created by Administrator
- * on 2018/1/23 0023.
+ * Created by xuxiaopeng on 2018/2/7.
  */
 
 public class DrawQQLayout extends FrameLayout {
-    private static final String TAG = "DrawQQLayout";
-    private ViewDragHelper.Callback callback;
+    private static final String TAG = "DrawLayout";
     private ViewDragHelper viewDragHelper;
+    private ViewDragHelper.Callback callback;
     private ViewGroup leftMenu;
     private ViewGroup mainMenu;
 
@@ -41,24 +39,18 @@ public class DrawQQLayout extends FrameLayout {
 
     private void init() {
 
+
         callback = new ViewDragHelper.Callback() {
+
             @Override
             public boolean tryCaptureView(View child, int pointerId) {
                 return true;
             }
 
             @Override
-            public void onViewCaptured(View capturedChild, int activePointerId) {
-                super.onViewCaptured(capturedChild, activePointerId);
-            }
-
-            @Override
-            public int getViewHorizontalDragRange(View child) {
-                return super.getViewHorizontalDragRange(child);
-            }
-
-            @Override
             public int clampViewPositionHorizontal(View child, int left, int dx) {
+                //根据建议值修改移动的位置
+                //left = child.getLeft + dx
                 if (child == mainMenu) {
                     return fixLeft(left);
                 }
@@ -67,20 +59,18 @@ public class DrawQQLayout extends FrameLayout {
 
             @Override
             public void onViewPositionChanged(View changedView, int left, int top, int dx, int dy) {
-                //当位置改变时候，处理要做的事（更新状态，伴随动画，重绘界面）
                 super.onViewPositionChanged(changedView, left, top, dx, dy);
+
                 int newleft = left;
                 if (changedView == leftMenu) {
                     newleft = mainMenu.getLeft() + dx;
-                    LogUtil.d("DrawQQLayout", "newleft" + newleft + "dx" + dx + "mainMenu.getLeft()" + mainMenu.getLeft());
                     newleft = fixLeft(newleft);
 
                     leftMenu.layout(0, 0, mWidth, mHeight);
-                    mainMenu.layout(0 + newleft, 0, mWidth + newleft, mHeight);
+                    mainMenu.layout(newleft, 0, newleft + mWidth, mHeight);
                 }
 
-                animation(newleft);
-                //为了兼容低版本2.3以下，每次修改值后重绘
+                setanimation(newleft);
                 invalidate();
             }
 
@@ -91,7 +81,7 @@ public class DrawQQLayout extends FrameLayout {
                     open();
                 } else if (xvel > 0) {
                     open();
-                } else {
+                }else{
                     close();
                 }
             }
@@ -99,23 +89,28 @@ public class DrawQQLayout extends FrameLayout {
         viewDragHelper = ViewDragHelper.create(this, callback);
     }
 
-    private void animation(int newleft) {
-        float peesent = newleft * 1.0f / range;
-        LogUtil.d(TAG, "百分比" + peesent);
+    private void setanimation(int newleft) {
+        float persent = newleft * 1.0f / range;
+        LogUtil.d(TAG, "百分比" + persent);
         //伴随动画
         // 1、左面板：缩放动画，平移动画，透明度变化
-        //缩放动画 0.5 》》0.5 + 0.5 * peesent
-        leftMenu.setScaleX(0.5f + 0.5f * peesent);
-        leftMenu.setScaleY(0.5f + 0.5f * peesent);
+        //缩放动画 0.5 》》0.5 + 0.5 * persent
+        leftMenu.setScaleX(0.5f + 0.5f * persent);
+        leftMenu.setScaleY(0.5f + 0.5f * persent);
         //平移动画 -mWidth >>> 0
-        leftMenu.setTranslationX(-mWidth / 2 + mWidth * peesent /2);
+        leftMenu.setTranslationX(-0.5f * mWidth + persent * 0.5f * mWidth);
+        //透明度0.5》》1.0
+        leftMenu.setAlpha(0.5f + 0.5f * persent);
+
+
+        // 2、主面板：缩放动画
+        mainMenu.setScaleX(1f - 0.2f * persent);
+        mainMenu.setScaleY(1f - 0.2f * persent);
     }
 
     @Override
     public void computeScroll() {
         super.computeScroll();
-        //aa持续平滑动画（高频调用）
-        //如果返回true，动画还需要继续执行
         if (viewDragHelper.continueSettling(true)) {
             ViewCompat.postInvalidateOnAnimation(this);
         }
@@ -131,6 +126,8 @@ public class DrawQQLayout extends FrameLayout {
             if (viewDragHelper.smoothSlideViewTo(mainMenu, finalLeft, 0)) {
                 ViewCompat.postInvalidateOnAnimation(this);
             }
+        }else{
+            mainMenu.layout(finalLeft,0,finalLeft + mWidth,mHeight);
         }
     }
 
@@ -144,13 +141,15 @@ public class DrawQQLayout extends FrameLayout {
             if (viewDragHelper.smoothSlideViewTo(mainMenu, finalLeft, 0)) {
                 ViewCompat.postInvalidateOnAnimation(this);
             }
+        } else {
+            mainMenu.layout(finalLeft,0,finalLeft + mWidth,mHeight);
         }
     }
 
     private int fixLeft(int left) {
-        if (left > range) {
+        if (left > range ) {
             return range;
-        } else if (left < 0) {
+        }else if (left < 0){
             return 0;
         }
         return left;
@@ -171,22 +170,29 @@ public class DrawQQLayout extends FrameLayout {
         return true;
     }
 
-    @Override
-    protected void onFinishInflate() {
-        super.onFinishInflate();
-        leftMenu = (ViewGroup) getChildAt(0);
-        mainMenu = (ViewGroup) getChildAt(1);
-    }
-
-    int mWidth;
-    int mHeight;
-    int range;
+    private int mHeight;
+    private int mWidth;
+    private int range;
 
     @Override
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
         super.onSizeChanged(w, h, oldw, oldh);
-        mWidth = getMeasuredWidth();
-        mHeight = getMeasuredHeight();
-        range = (int) (mWidth * 0.6);
+        mHeight = leftMenu.getMeasuredHeight();
+        mWidth = leftMenu.getMeasuredWidth();
+        range = (int) (mWidth *0.6);
+    }
+
+    @Override
+    protected void onFinishInflate() {
+        super.onFinishInflate();
+        int childCount = getChildCount();
+        if (childCount < 2) {
+            throw new IllegalStateException("至少得有两个孩子");
+        }
+        if (!(getChildAt(0) instanceof ViewGroup && getChildAt(1) instanceof ViewGroup)) {
+            throw new IllegalStateException("孩子控件不是容器");
+        }
+        leftMenu = (ViewGroup) getChildAt(0);
+        mainMenu = (ViewGroup) getChildAt(1);
     }
 }

@@ -5,7 +5,6 @@
     android:gravity="center"
     tools:context="com.hh.gridview_recyclerview.fragment.FirstFragment">
 
-    <!-- TODO: Update blank fragment layout -->
     <Button
         android:id="@+id/fragment_btn"
         android:layout_width="wrap_content"

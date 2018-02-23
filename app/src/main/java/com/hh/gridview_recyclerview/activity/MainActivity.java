@@ -147,7 +147,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 startActivity(intent);
                 break;
             case R.id.rx_java:
-                intent.setClass(this, RxJavaActivity.class);
+                intent.setClass(this, LrucatchActivity.class);
                 startActivity(intent);
                 break;
             case R.id.fragment:
