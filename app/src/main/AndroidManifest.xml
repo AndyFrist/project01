@@ -89,6 +89,7 @@
         <activity android:name=".activity.NumberPickActivity" />
         <activity android:name=".activity.SlideActivity"/>
         <activity android:name=".activity.IndexActivity"/>
+        <activity android:name=".activity.WebViewActivity"/>
     </application>
 
 </manifest>
