@@ -10,6 +10,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
+import android.widget.LinearLayout;
 
 import com.hh.gridview_recyclerview.utils.LogUtil;
 
@@ -17,12 +18,11 @@ import com.hh.gridview_recyclerview.utils.LogUtil;
  * Created by xuxiaopeng on 2018/2/7.
  */
 
-public class DrawQQLayout extends FrameLayout {
+public class DrawQQLayout extends LinearLayout {
     private static final String TAG = "DrawLayout";
+    private ViewDragHelper.Callback cb;
     private ViewDragHelper viewDragHelper;
-    private ViewDragHelper.Callback callback;
-    private ViewGroup leftMenu;
-    private ViewGroup mainMenu;
+    private View mChild;
 
     public DrawQQLayout(@NonNull Context context) {
         this(context, null);
@@ -34,13 +34,14 @@ public class DrawQQLayout extends FrameLayout {
 
     public DrawQQLayout(@NonNull Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
+
         init();
+
     }
 
     private void init() {
 
-
-        callback = new ViewDragHelper.Callback() {
+        cb = new ViewDragHelper.Callback() {
 
             @Override
             public boolean tryCaptureView(View child, int pointerId) {
@@ -51,106 +52,61 @@ public class DrawQQLayout extends FrameLayout {
             public int clampViewPositionHorizontal(View child, int left, int dx) {
                 //根据建议值修改移动的位置
                 //left = child.getLeft + dx
-                if (child == mainMenu) {
+                if (child == mChild) {
                     return fixLeft(left);
                 }
                 return left;
             }
 
             @Override
-            public void onViewPositionChanged(View changedView, int left, int top, int dx, int dy) {
-                super.onViewPositionChanged(changedView, left, top, dx, dy);
-
-                int newleft = left;
-                if (changedView == leftMenu) {
-                    newleft = mainMenu.getLeft() + dx;
-                    newleft = fixLeft(newleft);
-
-                    leftMenu.layout(0, 0, mWidth, mHeight);
-                    mainMenu.layout(newleft, 0, newleft + mWidth, mHeight);
-                }
-
-                setanimation(newleft);
-                invalidate();
-            }
-
-            @Override
             public void onViewReleased(View releasedChild, float xvel, float yvel) {
                 super.onViewReleased(releasedChild, xvel, yvel);
-                if (xvel == 0 && mainMenu.getLeft() > range / 2) {
-                    open();
-                } else if (xvel > 0) {
-                    open();
-                }else{
-                    close();
-                }
+                close();
             }
         };
-        viewDragHelper = ViewDragHelper.create(this, callback);
-    }
 
-    private void setanimation(int newleft) {
-        float persent = newleft * 1.0f / range;
-        LogUtil.d(TAG, "百分比" + persent);
-        //伴随动画
-        // 1、左面板：缩放动画，平移动画，透明度变化
-        //缩放动画 0.5 》》0.5 + 0.5 * persent
-        leftMenu.setScaleX(0.5f + 0.5f * persent);
-        leftMenu.setScaleY(0.5f + 0.5f * persent);
-        //平移动画 -mWidth >>> 0
-        leftMenu.setTranslationX(-0.5f * mWidth + persent * 0.5f * mWidth);
-        //透明度0.5》》1.0
-        leftMenu.setAlpha(0.5f + 0.5f * persent);
-
-
-        // 2、主面板：缩放动画
-        mainMenu.setScaleX(1f - 0.2f * persent);
-        mainMenu.setScaleY(1f - 0.2f * persent);
-    }
-
-    @Override
-    public void computeScroll() {
-        super.computeScroll();
-        if (viewDragHelper.continueSettling(true)) {
-            ViewCompat.postInvalidateOnAnimation(this);
-        }
+        viewDragHelper = ViewDragHelper.create(this, cb);
     }
 
     private void close() {
         close(true);
     }
 
-    private void close(boolean smooth) {
-        int finalLeft = 0;
-        if (smooth) {
-            if (viewDragHelper.smoothSlideViewTo(mainMenu, finalLeft, 0)) {
-                ViewCompat.postInvalidateOnAnimation(this);
-            }
-        }else{
-            mainMenu.layout(finalLeft,0,finalLeft + mWidth,mHeight);
+    @Override
+    public void computeScroll() {
+        super.computeScroll();
+
+        //aa持续平滑动画（高频调用）
+        //如果返回true，动画还需要继续执行
+        if (viewDragHelper.continueSettling(true)) {
+            ViewCompat.postInvalidateOnAnimation(this);
         }
     }
-
-    private void open() {
-        open(true);
-    }
-
-    private void open(boolean smooth) {
-        int finalLeft = range;
+    public void close(boolean smooth) {
+        int finalLeft = 0;
         if (smooth) {
-            if (viewDragHelper.smoothSlideViewTo(mainMenu, finalLeft, 0)) {
+            //a触发一个平滑动画
+            //返回true表示还没有移动到指定位置，需要刷新界面
+            if (viewDragHelper.smoothSlideViewTo(mChild, finalLeft, 0)) {
+                //参数传this（child所在的parent）
                 ViewCompat.postInvalidateOnAnimation(this);
             }
         } else {
-            mainMenu.layout(finalLeft,0,finalLeft + mWidth,mHeight);
+            mChild.layout(finalLeft, 0, finalLeft + mWidth, 0 + mHeight);
         }
     }
 
+    /**
+     * 设置范围
+     *
+     * @param left
+     * @return
+     */
     private int fixLeft(int left) {
-        if (left > range ) {
+        if (left < -range) {
+            return -range;
+        } else if (left > range) {
             return range;
-        }else if (left < 0){
-            return 0;
         }
         return left;
     }
@@ -170,29 +126,26 @@ public class DrawQQLayout extends FrameLayout {
         return true;
     }
 
-    private int mHeight;
-    private int mWidth;
-    private int range;
+    @Override
+    protected void onFinishInflate() {
+        super.onFinishInflate();
+        if (getChildCount() < 1) {
+            throw new IllegalStateException("至少有1个孩子view");
+        }
+        mChild = getChildAt(0);
+
+    }
+
+    int range;
+    int mHeight;
+    int mWidth;
 
     @Override
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
         super.onSizeChanged(w, h, oldw, oldh);
-        mHeight = leftMenu.getMeasuredHeight();
-        mWidth = leftMenu.getMeasuredWidth();
-        range = (int) (mWidth *0.6);
-    }
+        mHeight = mChild.getMeasuredHeight();
+        mWidth = mChild.getMeasuredWidth();
+        range = (int) (0.5 * mWidth);
 
-    @Override
-    protected void onFinishInflate() {
-        super.onFinishInflate();
-        int childCount = getChildCount();
-        if (childCount < 2) {
-            throw new IllegalStateException("至少得有两个孩子");
-        }
-        if (!(getChildAt(0) instanceof ViewGroup && getChildAt(1) instanceof ViewGroup)) {
-            throw new IllegalStateException("孩子控件不是容器");
-        }
-        leftMenu = (ViewGroup) getChildAt(0);
-        mainMenu = (ViewGroup) getChildAt(1);
     }
 }

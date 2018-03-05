@@ -9,6 +9,7 @@ import android.util.Log;
 import android.widget.TextView;
 
 import com.hh.gridview_recyclerview.R;
+import com.hh.gridview_recyclerview.View.DrawQQLayout;
 import com.hh.gridview_recyclerview.utils.LogUtil;
 
 /**
@@ -31,8 +32,10 @@ public class SlideActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         LogUtil.d(TAG,"onCreate");
-        setContentView(R.layout.activity_slide);
+        setContentView(R.layout.activity_slides);
         main_tv = (TextView) findViewById(R.id.main_tv);
+
+
         //创建一个线程,线程名字：handler-thread
         myHandlerThread = new HandlerThread( "handler-thread");
         //开启一个线程
@@ -44,7 +47,7 @@ public class SlideActivity extends AppCompatActivity {
                 super.handleMessage(msg);
                 //这个方法是运行在 handler-thread 线程中的 ，可以执行耗时操作
                 Log.d( "handler " , "消息： " + msg.what + "  线程： " + Thread.currentThread().getName()  ) ;
-                main_tv.setText("我是主线程的么~？？？" + Thread.currentThread().getName());
+                main_tv.setText("我是主线程的么~？？？我是主线程的么~？？？我是主线程的么~？？？我是主线程的么~？？？" + Thread.currentThread().getName());
             }
         };
 
