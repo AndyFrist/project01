@@ -68,4 +68,13 @@
         <attr name="DateTextColor" format="color"/>
         <attr name="ShapeColor" format="color"/>
     </declare-styleable>
+
+    <declare-styleable name="DIYForCharts">
+        <attr name="lineStrokeColor" format="color"/>
+        <attr name="lineAxisColor" format="color"/>
+        <attr name="lineStrokeWidth" format="dimension"/>
+        <attr name="lineStrokeSpacing" format="dimension"/>
+        <attr name="lineUseDip" format="boolean"/>
+        <attr name="lineBackground" format="color"/>
+    </declare-styleable>
 </resources>

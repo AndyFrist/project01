@@ -10,6 +10,7 @@ import android.widget.TextView;
 import com.hh.gridview_recyclerview.Bean.LineChartData;
 import com.hh.gridview_recyclerview.R;
 import com.hh.gridview_recyclerview.View.LineChart;
+import com.hh.gridview_recyclerview.View.LineChartView;
 import com.hh.gridview_recyclerview.adapter.MyrecyclerViewAdapter;
 import com.hh.gridview_recyclerview.recyclerView.DividerGridItemDecoration;
 
@@ -60,6 +61,9 @@ public class RecyclerActivity extends AppCompatActivity {
             dataList2.add(data);
         }
         mLineChart.setData(dataList2);
+
+        LineChartView li = (LineChartView) findViewById(R.id.l);
+        li.setParams("09/24","10/21",new float[]{1.0f, 3.0f, 1.0f, 3.0f, 1.0f, 3.0f, 1.0f});
     }
 
     public void dayClick(View view){
