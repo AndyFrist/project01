@@ -32,7 +32,7 @@ public class SlideActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         LogUtil.d(TAG,"onCreate");
-        setContentView(R.layout.activity_slides);
+        setContentView(R.layout.activity_slide);
         main_tv = (TextView) findViewById(R.id.main_tv);
 
 
