@@ -7,7 +7,10 @@
     <color name="color_item_normal">#44ff0000</color>
     <color name="red">#ff0000</color>
 
-
+    <color name="calendar_bg_color">#FFFFFF</color>
+    <color name="holiday_text_color">#9082BD</color>
+    <color name="select_circle_color">#FF8594</color>
+    <color name="colorBackground">#F0F1F5</color>
 
     <color name="background">#e4e5e9</color>
     <color name="white">#FFFFFF</color>

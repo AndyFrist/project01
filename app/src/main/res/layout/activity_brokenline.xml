@@ -5,11 +5,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:gravity="center"
     tools:context="com.hh.gridview_recyclerview.activity.BrokenlineActivity">
 
-    <com.hh.gridview_recyclerview.View.BrokenLineView
-        android:id="@+id/broken_line"
+    <com.hh.gridview_recyclerview.calendar.week.WeekCalendarView
         android:layout_width="match_parent"
-        android:layout_height="200dp" />
+        android:layout_height="48dp" />
+
+
+    <com.hh.gridview_recyclerview.calendar.month.MonthCalendarView
+        android:layout_width="match_parent"
+        android:layout_height="288dp" />
+
+
 </LinearLayout>

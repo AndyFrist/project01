@@ -4,4 +4,14 @@
 
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_principle">PrincipleActivity</string>
+
+    <string-array name="calendar_week">
+        <item>Sun</item>
+        <item>Mon</item>
+        <item>Tues</item>
+        <item>Wed</item>
+        <item>Thur</item>
+        <item>Fri</item>
+        <item>Sat</item>
+    </string-array>
 </resources>
