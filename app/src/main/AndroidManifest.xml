@@ -87,9 +87,12 @@
         <activity android:name=".activity.MyImageViewActivity" />
         <activity android:name=".activity.waterActivity" />
         <activity android:name=".activity.NumberPickActivity" />
-        <activity android:name=".activity.SlideActivity"/>
-        <activity android:name=".activity.IndexActivity"/>
-        <activity android:name=".activity.WebViewActivity"/>
+        <activity android:name=".activity.SlideActivity" />
+        <activity android:name=".activity.IndexActivity" />
+        <activity android:name=".activity.WebViewActivity" />
+        <activity
+            android:name=".activity.OverScrollyByActivity"
+            android:label="@string/title_activity_over_scrolly_by"></activity>
     </application>
 
 </manifest>
