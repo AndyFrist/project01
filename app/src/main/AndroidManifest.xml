@@ -11,8 +11,6 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
-    <uses-permission android:name="android.permission.WAKE_LOCK" />
-
     <application
         android:name=".myApplication.AndFixApplication"
         android:allowBackup="true"
@@ -92,7 +90,13 @@
         <activity android:name=".activity.WebViewActivity" />
         <activity
             android:name=".activity.OverScrollyByActivity"
-            android:label="@string/title_activity_over_scrolly_by"></activity>
+            android:label="@string/title_activity_over_scrolly_by" />
+        <!--        //显示软键盘,并让布局压缩-->
+        <activity android:name=".activity.InputActivity"
+        android:windowSoftInputMode="adjustResize"
+        android:screenOrientation="portrait"/>
+
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
     </application>
 
 </manifest>

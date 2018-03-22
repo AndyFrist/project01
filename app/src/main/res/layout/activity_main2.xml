@@ -124,9 +124,10 @@
             android:text="视觉差" />
 
         <Button
+            android:id="@+id/input_soft"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="按钮" />
+            android:text="输入框顶布局" />
 
         <Button
             android:layout_width="match_parent"
