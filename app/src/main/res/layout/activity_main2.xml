@@ -130,9 +130,10 @@
             android:text="输入框顶布局" />
 
         <Button
+            android:id="@+id/pull"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="按钮" />
+            android:text="上下拉动" />
 
         <Button
             android:layout_width="match_parent"

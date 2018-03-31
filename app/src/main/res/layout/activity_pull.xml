@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.hh.gridview_recyclerview.View.SlideView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.hh.gridview_recyclerview.activity.PullActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/myimageview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="圆形图片" />
+
+        <TextView
+            android:id="@+id/water_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="水波纹效果" />
+
+        <TextView
+            android:id="@+id/numberpick"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="numberpick" />
+
+        <TextView
+            android:id="@+id/swipemenu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="侧滑面板+HandlerThread" />
+
+        <Button
+            android:id="@+id/indexbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="快速索引" />
+
+        <Button
+            android:id="@+id/webview_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="webview" />
+
+        <Button
+            android:id="@+id/over_scroll_by"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="视觉差" />
+
+        <Button
+            android:id="@+id/input_soft"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="输入框顶布局" />
+
+        <TextView
+            android:id="@+id/pull"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="上下拉动" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="按钮" />
+    </LinearLayout>
+</com.hh.gridview_recyclerview.View.SlideView>
