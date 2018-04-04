@@ -63,8 +63,7 @@ public class MyScrollView extends ScrollView {
                 currentY = (int) event.getY();
                 deltaY = previousY - currentY;
                 previousY = currentY;
-                if (0 == getScrollY()
-                        || childView.getMeasuredHeight() - getHeight() <= getScrollY()) {
+                if (0 == getScrollY() || childView.getMeasuredHeight() - getHeight() <= getScrollY()) {
                     // 记录childView的初始位置
                     if (topRect.isEmpty()) {
                         topRect.set(childView.getLeft(), childView.getTop(), childView.getRight(), childView.getBottom());

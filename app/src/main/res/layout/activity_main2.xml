@@ -136,8 +136,9 @@
             android:text="上下拉动" />
 
         <Button
+            android:id="@+id/animation"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="按钮" />
+            android:text="动画集合" />
     </LinearLayout>
 </LinearLayout>
