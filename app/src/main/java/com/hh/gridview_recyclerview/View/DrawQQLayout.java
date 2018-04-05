@@ -94,7 +94,7 @@ public class DrawQQLayout extends FrameLayout {
     }
 
 //    private void dispatchDrawEvent(int newleft) {
-//        //伴随动画
+//        //伴随动画aaaaaaaaaaaa
 //        float persent = newleft * 1.0f / range;
 //        // 1、左面板：缩放动画，平移动画，透明度变化
 //        //缩放动画 0.5 》》0.5 + 0.5 * peesent
