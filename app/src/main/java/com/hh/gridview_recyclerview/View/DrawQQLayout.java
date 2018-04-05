@@ -80,7 +80,7 @@ public class DrawQQLayout extends FrameLayout {
 
             @Override
             public void onViewReleased(View releasedChild, float xvel, float yvel) {
-                //当View被释放处理的事（执行动画）
+                //当View被释放处理的事（执行动画）aaaaa
                 // releasedChild 被释放的view
                 //xvel 水平方向的速度
                 //yvel 垂直方向的速度
