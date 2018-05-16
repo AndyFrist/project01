@@ -9,6 +9,7 @@ import android.widget.Button;
 
 import com.hh.gridview_recyclerview.R;
 import com.hh.gridview_recyclerview.materialdesign.MaterialDesignActivity;
+import com.hh.gridview_recyclerview.service.ForgoundService;
 import com.hh.gridview_recyclerview.utils.LogUtil;
 
 public class Main2Activity extends AppCompatActivity implements View.OnClickListener {
@@ -103,8 +104,9 @@ public class Main2Activity extends AppCompatActivity implements View.OnClickList
                 intent.setClass(this, BrokenlineActivity.class);
                 break;
             case R.id.myimageview:
-                intent.setClass(this, MyImageViewActivity.class);
-                break;
+                intent.setClass(this, ForgoundService.class);
+
+            break;
             case R.id.water_id:
                 intent.setClass(this, waterActivity.class);
                 break;
@@ -135,7 +137,8 @@ public class Main2Activity extends AppCompatActivity implements View.OnClickList
             default:
 
         }
-        startActivity(intent);
+        startService(intent);
+//        startActivity(intent);
     }
 
     @Override

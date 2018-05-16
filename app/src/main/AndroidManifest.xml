@@ -101,7 +101,12 @@
         <uses-permission android:name="android.permission.WAKE_LOCK" />
 
         <activity android:name=".activity.PullActivity" />
-        <activity android:name=".activity.AnimatorActivity"></activity>
+        <activity android:name=".activity.AnimatorActivity" />
+
+        <service
+            android:name=".service.ForgoundService"
+            android:enabled="true"
+            android:exported="true"></service>
     </application>
 
 </manifest>
