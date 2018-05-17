@@ -137,8 +137,8 @@ public class Main2Activity extends AppCompatActivity implements View.OnClickList
             default:
 
         }
-        startService(intent);
-//        startActivity(intent);
+//        startService(intent);
+        startActivity(intent);
     }
 
     @Override
