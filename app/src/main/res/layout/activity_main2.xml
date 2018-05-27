@@ -85,7 +85,7 @@
             android:id="@+id/myimageview"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="圆形图片" />
+            android:text="server学习" />
 
         <Button
             android:id="@+id/water_id"
