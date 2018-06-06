@@ -14,7 +14,7 @@ import com.hh.gridview_recyclerview.utils.LogUtil;
 public class Main2Activity extends AppCompatActivity implements View.OnClickListener {
     private static final String TAG = "Activitylife";
     private Button btn_left_1, btn_left_2, btn_left_3, btn_left_4, btn_left_5, btn_left_6, btn_left_7, okhttp, myprocess, brokenline;
-    private Button myimageview, water_id, numberpick, swipemenu, indexbar;
+    private Button myimageview, water_id, numberpick, swipemenu, indexbar, webview_id, over_scroll_by, input_soft, pull, animation;
     private Intent intent;
 
     @Override
@@ -57,6 +57,16 @@ public class Main2Activity extends AppCompatActivity implements View.OnClickList
         swipemenu.setOnClickListener(this);
         indexbar = (Button) findViewById(R.id.indexbar);
         indexbar.setOnClickListener(this);
+        webview_id = (Button) findViewById(R.id.webview_id);
+        webview_id.setOnClickListener(this);
+        over_scroll_by = (Button) findViewById(R.id.over_scroll_by);
+        over_scroll_by.setOnClickListener(this);
+        input_soft = (Button) findViewById(R.id.input_soft);
+        input_soft.setOnClickListener(this);
+        pull = (Button) findViewById(R.id.pull);
+        pull.setOnClickListener(this);
+        animation = (Button) findViewById(R.id.animation);
+        animation.setOnClickListener(this);
     }
 
     @Override
@@ -107,9 +117,25 @@ public class Main2Activity extends AppCompatActivity implements View.OnClickList
             case R.id.indexbar:
                 intent.setClass(this, IndexActivity.class);
                 break;
+            case R.id.webview_id:
+                intent.setClass(this, WebViewActivity.class);
+                break;
+            case R.id.over_scroll_by:
+                intent.setClass(this, OverScrollyByActivity.class);
+                break;
+            case R.id.input_soft:
+                intent.setClass(this, InputActivity.class);
+                break;
+            case R.id.pull:
+                intent.setClass(this, PullActivity.class);
+                break;
+            case R.id.animation:
+                intent.setClass(this, AnimatorActivity.class);
+                break;
             default:
 
         }
+//        startService(intent);
         startActivity(intent);
     }
 

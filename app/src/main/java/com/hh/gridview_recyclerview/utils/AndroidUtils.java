@@ -5,6 +5,9 @@ import android.view.WindowManager;
 
 import com.hh.gridview_recyclerview.myApplication.AndFixApplication;
 
+import java.math.BigDecimal;
+import java.text.DecimalFormat;
+
 /**
  * Created by Administrator on 2017/11/27.
  */
@@ -45,5 +48,18 @@ public class AndroidUtils {
             result = context.getResources().getDimensionPixelSize(resourceId);
         }
         return result;
+    }
+
+    public static int px2dip(Context context, float dpValue) {
+        final float scale = context.getResources().getDisplayMetrics().density;
+        return (int) (dpValue * scale + 0.5f);
+    }
+
+    public static String omit4Float(float f) {
+        BigDecimal b = new BigDecimal(f);
+        float f1 = b.setScale(4, BigDecimal.ROUND_HALF_UP).floatValue();
+        DecimalFormat decimalFormat = new DecimalFormat("##0.0000");
+        String s = decimalFormat.format(f1);
+        return s;
     }
 }

@@ -23,7 +23,6 @@ public class FloatView extends View {
 
     public FloatView(Context context) {
         super(context);
-        // TODO Auto-generated constructor stub
     }
 
     @Override

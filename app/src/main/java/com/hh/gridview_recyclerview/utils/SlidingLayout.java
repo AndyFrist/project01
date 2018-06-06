@@ -206,7 +206,7 @@ public class SlidingLayout extends ViewGroup {
             if (isInEditMode()) {
                 // Don't crash the layout editor. Consume all of the space if specified
                 // or pick a magic number from thin air otherwise.
-                // TODO Better communication with tools of this bogus state.
+                // Better communication with tools of this bogus state.
                 // It will crash on a real device.
                 if (widthMode == MeasureSpec.AT_MOST) {
                     widthMode = MeasureSpec.EXACTLY;
@@ -220,7 +220,7 @@ public class SlidingLayout extends ViewGroup {
         } else if (heightMode == MeasureSpec.UNSPECIFIED) {
             if (isInEditMode()) {
                 // Don't crash the layout editor. Pick a magic number from thin air instead.
-                // TODO Better communication with tools of this bogus state.
+                //  Better communication with tools of this bogus state.
                 // It will crash on a real device.
                 if (heightMode == MeasureSpec.UNSPECIFIED) {
                     heightMode = MeasureSpec.AT_MOST;

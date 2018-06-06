@@ -29,7 +29,7 @@
             android:id="@+id/btn_left_2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Recycler" />
+            android:text="折线图" />
 
 
         <Button
@@ -72,7 +72,7 @@
             android:id="@+id/brokenline"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="折线图" />
+            android:text="日历" />
     </LinearLayout>
 
     <LinearLayout
@@ -85,7 +85,7 @@
             android:id="@+id/myimageview"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="圆形图片" />
+            android:text="server学习" />
 
         <Button
             android:id="@+id/water_id"
@@ -112,28 +112,33 @@
             android:text="快速索引" />
 
         <Button
+            android:id="@+id/webview_id"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="按钮" />
+            android:text="webview" />
 
         <Button
+            android:id="@+id/over_scroll_by"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="按钮" />
+            android:text="视觉差" />
 
         <Button
+            android:id="@+id/input_soft"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="按钮" />
+            android:text="输入框顶布局" />
 
         <Button
+            android:id="@+id/pull"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="按钮" />
+            android:text="上下拉动" />
 
         <Button
+            android:id="@+id/animation"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="按钮" />
+            android:text="动画集合" />
     </LinearLayout>
 </LinearLayout>

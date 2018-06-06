@@ -11,7 +11,6 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
-    <uses-permission android:name="android.permission.WAKE_LOCK" />
 
     <application
         android:name=".myApplication.AndFixApplication"
@@ -87,8 +86,27 @@
         <activity android:name=".activity.MyImageViewActivity" />
         <activity android:name=".activity.waterActivity" />
         <activity android:name=".activity.NumberPickActivity" />
-        <activity android:name=".activity.SlideActivity"/>
-        <activity android:name=".activity.IndexActivity"/>
+        <activity android:name=".activity.SlideActivity" />
+        <activity android:name=".activity.IndexActivity" />
+        <activity android:name=".activity.WebViewActivity" />
+        <activity
+            android:name=".activity.OverScrollyByActivity"
+            android:label="@string/title_activity_over_scrolly_by" />
+        <!-- //显示软键盘,并让布局压缩 -->
+        <activity
+            android:name=".activity.InputActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+
+        <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+        <activity android:name=".activity.PullActivity" />
+        <activity android:name=".activity.AnimatorActivity" />
+
+        <service
+            android:name=".service.ForgoundService"
+            android:enabled="true"
+            android:exported="true"></service>
     </application>
 
 </manifest>
