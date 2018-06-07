@@ -14,24 +14,47 @@
 
         <TextView
             android:id="@+id/back"
-            android:layout_width="wrap_content"
+            android:layout_width="100dp"
             android:layout_height="match_parent"
+            android:gravity="center"
             android:text="返回" />
 
         <TextView
             android:id="@+id/title"
             android:layout_width="0dp"
+            android:layout_height="match_parent"
             android:layout_weight="1"
-            android:layout_height="match_parent" />
+            android:gravity="center" />
 
         <TextView
             android:id="@+id/flash"
-            android:layout_width="wrap_content"
+            android:layout_width="100dp"
             android:layout_height="match_parent"
+            android:gravity="center"
             android:text="刷新" />
     </LinearLayout>
+
     <WebView
         android:id="@+id/my_webview"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="300dp" />
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/edittext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/send2webview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="发送给网页" />
+    </LinearLayout>
 </LinearLayout>

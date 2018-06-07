@@ -8,20 +8,27 @@ import android.webkit.WebChromeClient;
 import android.webkit.WebResourceRequest;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.hh.gridview_recyclerview.R;
+import com.hh.gridview_recyclerview.utils.ImoocJsInterfave;
 
 
-public class WebViewActivity extends AppCompatActivity implements View.OnClickListener{
+public class WebViewActivity extends AppCompatActivity implements View.OnClickListener {
     private LinearLayout webview_root;
     private WebView my_webview;
-    
+
     private TextView back;
     private TextView title_view;
     private TextView flash;
-    
+
+
+    private EditText edittext;
+    private Button send2webview;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,13 +41,23 @@ public class WebViewActivity extends AppCompatActivity implements View.OnClickLi
         back = (TextView) findViewById(R.id.back);
         flash = (TextView) findViewById(R.id.flash);
         title_view = (TextView) findViewById(R.id.title);
+        edittext = (EditText) findViewById(R.id.edittext);
+        send2webview = (Button) findViewById(R.id.send2webview);
+
         back.setOnClickListener(this);
         flash.setOnClickListener(this);
-        my_webview = (WebView) findViewById(R.id.my_webview);
-        my_webview.getSettings().setJavaScriptEnabled(true);
-        my_webview.loadUrl("https://www.baidu.com/");
+        send2webview.setOnClickListener(this);
 
-        my_webview.setWebViewClient(new WebViewClient(){
+        my_webview = (WebView) findViewById(R.id.my_webview);
+        //允许webview加载JS代码
+        my_webview.getSettings().setJavaScriptEnabled(true);
+        //给webview添加JS接口
+        my_webview.addJavascriptInterface(new ImoocJsInterfave(), "imoocLauncher");
+
+        my_webview.loadUrl("file:///android_asset/webview.html");
+
+
+        my_webview.setWebViewClient(new WebViewClient() {
             @Override
             public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
 
@@ -49,7 +66,7 @@ public class WebViewActivity extends AppCompatActivity implements View.OnClickLi
             }
         });
 
-        my_webview.setWebChromeClient(new WebChromeClient(){
+        my_webview.setWebChromeClient(new WebChromeClient() {
             @Override
             public void onReceivedTitle(WebView view, String title) {
                 super.onReceivedTitle(view, title);
@@ -63,6 +80,8 @@ public class WebViewActivity extends AppCompatActivity implements View.OnClickLi
 
             }
         });
+
+
     }
 
 
@@ -73,11 +92,16 @@ public class WebViewActivity extends AppCompatActivity implements View.OnClickLi
 
     @Override
     public void onClick(View view) {
-        if (view == flash){
+        if (view == flash) {
             my_webview.reload();
         }
-        if (view == back){
+        if (view == back) {
             finish();
+        }
+        if (view == send2webview) {
+            String str = edittext.getText().toString().trim();
+            //Android调用js代码传值给H5
+            my_webview.loadUrl("javascript:if(window.remote){window.remote('" + str + "')}");
         }
     }
 }
