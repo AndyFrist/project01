@@ -79,7 +79,7 @@
         <activity android:name=".activity.HnadlerThreadActivity" />
         <activity android:name=".activity.TabLauyoutActivity" />
         <activity android:name=".activity.MyrecycleviewActivity" />
-        <activity android:name=".materialdesign.MaterialDesignActivity" />
+        <activity android:name=".materialdesign.MaterialDesignActivity1" />
         <activity android:name=".activity.OkhttpActivity" />
         <activity android:name=".activity.RingProcessActivity" />
         <activity android:name=".activity.BrokenlineActivity" />
@@ -88,8 +88,9 @@
         <activity android:name=".activity.NumberPickActivity" />
         <activity android:name=".activity.SlideActivity" />
         <activity android:name=".activity.IndexActivity" />
-        <activity android:name=".activity.WebViewActivity"
-            android:windowSoftInputMode="adjustPan"/>
+        <activity
+            android:name=".activity.WebViewActivity"
+            android:windowSoftInputMode="adjustPan" />
         <activity
             android:name=".activity.OverScrollyByActivity"
             android:label="@string/title_activity_over_scrolly_by" />
@@ -107,7 +108,10 @@
         <service
             android:name=".service.ForgoundService"
             android:enabled="true"
-            android:exported="true"></service>
+            android:exported="true" />
+
+        <activity android:name=".materialdesign.MaterialDesignsActivity" />
+        <activity android:name=".materialdesign.MaterialDesignActivity2"></activity>
     </application>
 
 </manifest>

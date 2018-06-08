@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.hh.gridview_recyclerview.R;
-import com.hh.gridview_recyclerview.materialdesign.MaterialDesignActivity;
+import com.hh.gridview_recyclerview.materialdesign.MaterialDesignsActivity;
 import com.hh.gridview_recyclerview.utils.LogUtil;
 
 public class Main2Activity extends AppCompatActivity implements View.OnClickListener {
@@ -91,7 +91,7 @@ public class Main2Activity extends AppCompatActivity implements View.OnClickList
                 intent.setClass(this, MyrecycleviewActivity.class);
                 break;
             case R.id.btn_left_7:
-                intent.setClass(this, MaterialDesignActivity.class);
+                intent.setClass(this, MaterialDesignsActivity.class);
                 break;
             case R.id.okhttp:
                 intent.setClass(this, OkhttpActivity.class);

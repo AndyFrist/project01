@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>我是标题</title>
+<style type="text/css">
+body{
+	background: #cbcc1a;
+}
+.btn{
+	line-height: 40px;
+	margin: 10px;
+	background: #cccccc;
+}
+</style>
+</head>
+<body>
+<h2>webview</h2>
+<div><span>请输入要传的值：</span><input type="text" id="input"></div>
+<div id = "btn"><span class="btn">点我</span></div>
+<script type="text/javascript">
+	var btnEle = document.getElementById("btn");
+	var inputEle = document.getElementById("input");
+	btnEle.addEventListener("click",function(){
+		var str = inputEle.value;
+		if (window.imoocLauncher) {
+			//H5调用原生代码传值给原生
+			imoocLauncher.setValue(str);
+		}else{
+			alert("imoocLauncher not found!");
+		}
+	});
+
+	//原生通过调用此方法传值给H5
+	var remote = function (str){
+		inputEle.value = str;
+	}
+
+</script>
+</body>
+</html>

@@ -4,6 +4,9 @@ import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -16,6 +19,8 @@ public class TabLauyoutActivity extends BaseActivity {
 
     private TabLayout tab;
     private ViewPager pager;
+    private Toolbar toobar;
+    private DrawerLayout drawerlayout;
     private Myadapter myadapter;
     private ArrayList<String> list = new ArrayList<>();
 
@@ -25,6 +30,21 @@ public class TabLauyoutActivity extends BaseActivity {
         setContentView(R.layout.activity_tab_lauyout);
         tab = (TabLayout) findViewById(R.id.tab);
         pager = (ViewPager) findViewById(R.id.pager);
+        toobar = (Toolbar)findViewById(R.id.toobar);
+        setSupportActionBar(toobar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        drawerlayout = (DrawerLayout) findViewById(R.id.drawerlayout);
+
+        ActionBarDrawerToggle actionBarDrawerToggle = new ActionBarDrawerToggle(TabLauyoutActivity.this,drawerlayout,toobar,0,0);
+        drawerlayout.addDrawerListener(actionBarDrawerToggle);
+        actionBarDrawerToggle.syncState();
+
+
+
+
+
+
         init();
     }
 
