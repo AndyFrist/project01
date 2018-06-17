@@ -13,7 +13,7 @@ import com.hh.gridview_recyclerview.utils.LogUtil;
 
 public class Main2Activity extends AppCompatActivity implements View.OnClickListener {
     private static final String TAG = "Activitylife";
-    private Button btn_left_1, btn_left_2, btn_left_3, btn_left_4, btn_left_5, btn_left_6, btn_left_7, okhttp, myprocess, brokenline;
+    private Button btn_left_1, btn_left_2, btn_left_3, btn_left_4, btn_left_5, btn_left_6, btn_left_7, okhttp, myprocess, brokenline, sockeybtn;
     private Button myimageview, water_id, numberpick, swipemenu, indexbar, webview_id, over_scroll_by, input_soft, pull, animation;
     private Intent intent;
 
@@ -67,6 +67,8 @@ public class Main2Activity extends AppCompatActivity implements View.OnClickList
         pull.setOnClickListener(this);
         animation = (Button) findViewById(R.id.animation);
         animation.setOnClickListener(this);
+        sockeybtn = (Button) findViewById(R.id.sockeybtn);
+        sockeybtn.setOnClickListener(this);
     }
 
     @Override
@@ -131,6 +133,9 @@ public class Main2Activity extends AppCompatActivity implements View.OnClickList
                 break;
             case R.id.animation:
                 intent.setClass(this, AnimatorActivity.class);
+                break;
+            case R.id.sockeybtn:
+                intent.setClass(this, SocketActivity.class);
                 break;
             default:
 

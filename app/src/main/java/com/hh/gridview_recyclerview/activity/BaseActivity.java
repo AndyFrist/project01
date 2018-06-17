@@ -18,7 +18,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by Administrator on 2017/6/17.
+ * Created by Administrator
+ * on 2017/6/17.
  */
 
 public class BaseActivity extends AppCompatActivity {

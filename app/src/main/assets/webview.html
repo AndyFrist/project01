@@ -17,7 +17,7 @@ body{
 <body>
 <h2>webview</h2>
 <div><span>请输入要传的值：</span><input type="text" id="input"></div>
-<div id = "btn"><span class="btn">点我</span></div>
+<div id = "btn"><span class="btn">点我传值给原生</span></div>
 <script type="text/javascript">
 	var btnEle = document.getElementById("btn");
 	var inputEle = document.getElementById("input");
@@ -29,6 +29,9 @@ body{
 		}else{
 			alert("imoocLauncher not found!");
 		}
+		if (str == null || str == "") {
+			alert("不能传空值");
+		};
 	});
 
 	//原生通过调用此方法传值给H5

@@ -73,6 +73,24 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="日历" />
+
+        <Button
+            android:id="@+id/sockeybtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="sockey通信" />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="日历" />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="日历" />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="日历" />
     </LinearLayout>
 
     <LinearLayout

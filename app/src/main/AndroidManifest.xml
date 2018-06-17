@@ -111,7 +111,8 @@
             android:exported="true" />
 
         <activity android:name=".materialdesign.MaterialDesignsActivity" />
-        <activity android:name=".materialdesign.MaterialDesignActivity2"></activity>
+        <activity android:name=".materialdesign.MaterialDesignActivity2" />
+        <activity android:name=".activity.SocketActivity"></activity>
     </application>
 
 </manifest>

@@ -1,5 +1,6 @@
 package com.hh.gridview_recyclerview.activity;
 
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -14,10 +15,13 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.hh.gridview_recyclerview.R;
+import com.hh.gridview_recyclerview.utils.ImoocJsInterfaceBridge;
 import com.hh.gridview_recyclerview.utils.ImoocJsInterfave;
+import com.hh.gridview_recyclerview.utils.LogUtil;
 
 
-public class WebViewActivity extends AppCompatActivity implements View.OnClickListener {
+public class WebViewActivity extends AppCompatActivity implements View.OnClickListener ,ImoocJsInterfaceBridge {
+    private static final String TAG = "WebViewActivity";
     private LinearLayout webview_root;
     private WebView my_webview;
 
@@ -52,7 +56,7 @@ public class WebViewActivity extends AppCompatActivity implements View.OnClickLi
         //允许webview加载JS代码
         my_webview.getSettings().setJavaScriptEnabled(true);
         //给webview添加JS接口
-        my_webview.addJavascriptInterface(new ImoocJsInterfave(), "imoocLauncher");
+        my_webview.addJavascriptInterface(new ImoocJsInterfave(this), "imoocLauncher");
 
         my_webview.loadUrl("file:///android_asset/webview.html");
 
@@ -77,11 +81,12 @@ public class WebViewActivity extends AppCompatActivity implements View.OnClickLi
         my_webview.setDownloadListener(new DownloadListener() {
             @Override
             public void onDownloadStart(String s, String s1, String s2, String s3, long l) {
-
+                LogUtil.d(TAG,"下载进度"+ l);
             }
         });
 
-
+        //允许浏览器调试
+//        my_webview.setWebContentsDebuggingEnabled(true);
     }
 
 
@@ -103,5 +108,15 @@ public class WebViewActivity extends AppCompatActivity implements View.OnClickLi
             //Android调用js代码传值给H5
             my_webview.loadUrl("javascript:if(window.remote){window.remote('" + str + "')}");
         }
+    }
+
+    @Override
+    public void setValues(final String values) {
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                edittext.setText(values);
+            }
+        });
     }
 }
