@@ -1,5 +1,6 @@
 package com.hh.gridview_recyclerview.activity;
 
+import android.app.ExpandableListActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.PersistableBundle;
@@ -13,7 +14,7 @@ import com.hh.gridview_recyclerview.utils.LogUtil;
 
 public class Main2Activity extends AppCompatActivity implements View.OnClickListener {
     private static final String TAG = "Activitylife";
-    private Button btn_left_1, btn_left_2, btn_left_3, btn_left_4, btn_left_5, btn_left_6, btn_left_7, okhttp, myprocess, brokenline, sockeybtn;
+    private Button btn_left_1, btn_left_2, btn_left_3, btn_left_4, btn_left_5, btn_left_6, btn_left_7, okhttp, myprocess, brokenline, sockeybtn, expandableListView;
     private Button myimageview, water_id, numberpick, swipemenu, indexbar, webview_id, over_scroll_by, input_soft, pull, animation;
     private Intent intent;
 
@@ -69,6 +70,8 @@ public class Main2Activity extends AppCompatActivity implements View.OnClickList
         animation.setOnClickListener(this);
         sockeybtn = (Button) findViewById(R.id.sockeybtn);
         sockeybtn.setOnClickListener(this);
+        expandableListView = (Button) findViewById(R.id.expandableListView);
+        expandableListView.setOnClickListener(this);
     }
 
     @Override
@@ -136,6 +139,9 @@ public class Main2Activity extends AppCompatActivity implements View.OnClickList
                 break;
             case R.id.sockeybtn:
                 intent.setClass(this, SocketActivity.class);
+                break;
+            case R.id.expandableListView:
+                intent.setClass(this, ExpandableListViewActivity.class);
                 break;
             default:
 

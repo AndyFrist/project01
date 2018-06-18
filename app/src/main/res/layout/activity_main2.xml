@@ -80,9 +80,10 @@
             android:layout_height="wrap_content"
             android:text="sockey通信" />
         <Button
+            android:id="@+id/expandableListView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="日历" />
+            android:text="可折叠ListView" />
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

@@ -112,7 +112,8 @@
 
         <activity android:name=".materialdesign.MaterialDesignsActivity" />
         <activity android:name=".materialdesign.MaterialDesignActivity2" />
-        <activity android:name=".activity.SocketActivity"></activity>
+        <activity android:name=".activity.SocketActivity" />
+        <activity android:name=".activity.ExpandableListViewActivity"></activity>
     </application>
 
 </manifest>
