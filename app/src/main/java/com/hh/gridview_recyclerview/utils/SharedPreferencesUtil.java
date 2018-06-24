@@ -36,7 +36,7 @@ public class SharedPreferencesUtil {
             editor.putLong(key, (Long)data);
         }
 
-        editor.commit();
+        editor.apply();
     }
 
     /**
