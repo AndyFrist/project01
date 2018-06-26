@@ -6,8 +6,10 @@ import android.content.Context;
 import android.content.Intent;
 import android.telephony.PhoneStateListener;
 import android.telephony.TelephonyManager;
+import android.util.Log;
 
 import com.hh.gridview_recyclerview.myApplication.AndFixApplication;
+import com.hh.gridview_recyclerview.utils.LogUtil;
 import com.hh.gridview_recyclerview.utils.SharedPreferencesUtil;
 
 import java.sql.SQLOutput;
@@ -20,6 +22,7 @@ import java.util.SortedSet;
  * @version 2013-07-29 8:18
  */
 public class MyPhoneBroadcastListener extends BroadcastReceiver {
+    private static final String TAG = "MyPhoneBroadcastListene";
     /**
      * 手机没有通话，在一般的状态值
      */
@@ -51,6 +54,8 @@ public class MyPhoneBroadcastListener extends BroadcastReceiver {
         //拿到系统的TelephonyManager
         TelephonyManager tpManager = (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
         listener = new MyPhoneListener();//创建监听器
+
+        Log.d(TAG, "onReceive: ----------" + intent.getAction());
         tpManager.listen(listener, PhoneStateListener.LISTEN_CALL_STATE);//设置监听器
     }
 
@@ -59,7 +64,7 @@ public class MyPhoneBroadcastListener extends BroadcastReceiver {
         public void onCallStateChanged(int state, String incomingNumber) {
             //首先取得当前的状态值
             oldState = (int) SharedPreferencesUtil.getData(AndFixApplication.getContext(), "PHONESTATUE", currentState);
-            System.out.println(""+state);
+            LogUtil.d(TAG, state+"");
 
             switch (state) {
                 case TelephonyManager.CALL_STATE_IDLE:
@@ -74,12 +79,15 @@ public class MyPhoneBroadcastListener extends BroadcastReceiver {
             }
             //当通话状态发生改变
             if (oldState == CALL_TYPE_CALLING && currentState == CALL_TYPE_RING) {
-                System.out.println("接听");
+
+                LogUtil.d(TAG,"接听" +incomingNumber);
             } else if (oldState == CALL_TYPE_CALLING && currentState == CALL_TYPE_IDEL) {
-                System.out.println("挂断");
+
+                LogUtil.d(TAG,"挂断" + incomingNumber);
             }
             if (oldState == CALL_TYPE_IDEL && currentState == CALL_TYPE_CALLING) {
-                System.out.println("拨号");
+
+                LogUtil.d(TAG,"拨号" +incomingNumber);
             }
             SharedPreferencesUtil.saveData(AndFixApplication.getContext(), "PHONESTATUE", currentState);
         }

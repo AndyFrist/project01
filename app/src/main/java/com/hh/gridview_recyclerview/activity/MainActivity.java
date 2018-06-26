@@ -2,6 +2,7 @@ package com.hh.gridview_recyclerview.activity;
 
 import android.Manifest;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.RequiresApi;
@@ -9,6 +10,8 @@ import android.view.View;
 import android.widget.Button;
 
 import com.hh.gridview_recyclerview.R;
+import com.hh.gridview_recyclerview.callListener.androidbroadcast.MyPhoneBroadcastListener;
+import com.hh.gridview_recyclerview.callListener.androidbroadcast.PhoneStateReceiver;
 import com.hh.gridview_recyclerview.myinteraface.PermissionListener;
 import com.hh.gridview_recyclerview.recyclerView.HomeActivity;
 import com.hh.gridview_recyclerview.utils.IntentUtils;
@@ -28,16 +31,20 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     private Button retrofit;
     private Button rx_java;
 
-    private Button fragment,map_btn,surfaceview, drawView, myseekBar, touchlove, lottie, simcode, camera2btn, camerabtn, tth,windowmanger,six_principle;
+    private Button fragment, map_btn, surfaceview, drawView, myseekBar, touchlove, lottie, simcode, camera2btn, camerabtn, tth, windowmanger, six_principle;
 
 
     private Intent intent;
+
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initView();
+
+
     }
+
 
     private void initView() {
         intent = new Intent();

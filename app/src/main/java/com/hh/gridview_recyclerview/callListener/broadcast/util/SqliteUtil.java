@@ -52,7 +52,7 @@ public class SqliteUtil extends SQLiteOpenHelper {
 		// TODO Auto-generated method stub
 		this.db = db;
 		db.execSQL("create table " + TABLE_NAME + "(flag Integer)");
-		db.execSQL("insert into " + TABLE_NAME + " values(" + MyPhoneBroadcastListener.CALL_TYPE_IDEL + ")");
+		db.execSQL("insert into " + TABLE_NAME + " values(" + BroadcastListener.CALL_TYPE_IDEL + ")");
 	}
 
 	@Override

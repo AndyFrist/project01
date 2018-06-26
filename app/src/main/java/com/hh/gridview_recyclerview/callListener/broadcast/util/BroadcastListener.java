@@ -16,7 +16,7 @@ import com.hh.gridview_recyclerview.callListener.broadcast.util.SqliteUtil;
  * @version 2013-07-29 8:18
  * 
  */
-public class MyPhoneBroadcastListener extends BroadcastReceiver {
+public class BroadcastListener extends BroadcastReceiver {
 	/**
 	 * 手机没有通话，在一般的状态值
 	 */

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_sliding_drawer"
     android:layout_width="match_parent"
@@ -10,31 +9,68 @@
 
     <View
         android:layout_width="match_parent"
-        android:layout_height="100dp">
+        android:layout_height="10dp">
 
     </View>
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="open"
+        android:text="open" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="close"
+        android:text="close" />
+
     <SlidingDrawer
-        android:layout_weight="1"
+        android:id="@+id/sd"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:layout_weight="1"
         android:content="@+id/content"
         android:handle="@+id/handle"
         android:orientation="vertical">
 
-        <ImageView
+        <LinearLayout
             android:id="@+id/handle"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:src="@mipmap/y_below_mark"/>
+            android:orientation="horizontal">
 
-        <TextView
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/y_below_mark" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="拖拉" />
+        </LinearLayout>
+
+
+        <LinearLayout
             android:id="@+id/content"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="jaskdflafjjdffskalfjffffjfjfjfjfjjsaldfjdguoiuqweioncjxfvmncmzvnjfajkdfadjh大嫁风尚克拉的积分jfasdf案范dsalkjjlkasdjf就阿萨德据了解 拉伸的积kdflafjjdffskalfjffffjfjfjfjfjjsaldfjdguoiuqweioncjxfvmncmzvnjfajkdfadjh大嫁风尚克拉的积分jfasdf案范dsalkjjlkasdjf就阿萨德据了解 拉伸的积kdflafjjdffskalfjffffjfjfjfjfjjsaldfjdguoiuqweioncjxfvmncmzvnjfajkdfadjh大嫁风尚克拉的积分jfasdf案范dsalkjjlkasdjf就阿萨德据了解 拉伸的积kdflafjjdffskalfjffffjfjfjfjfjjsaldfjdguoiuqweioncjxfvmncmzvnjfajkdfadjh大嫁风尚克拉的积分jfasdf案范dsalkjjlkasdjf就阿萨德据了解 拉伸的积分"
-            android:background="#f00"/>
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="拖拉" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#f00"
+                android:text="jaskdflafjjdffskalfjffffjfjfjfjfjjsaldfjdguoiuqweioncjxfvmncmzvnjfajkdfadjh大嫁风尚克拉的积分jfasdf案范dsalkjjlkasdjf就阿萨德据了解 拉伸的积kdflafjjdffskalfjffffjfjfjfjfjjsaldfjdguoiuqweioncjxfvmncmzvnjfajkdfadjh大嫁风尚克拉的积分jfasdf案范dsalkjjlkasdjf就阿萨德据了解 拉伸的积kdflafjjdffskalfjffffjfjfjfjfjjsaldfjdguoiuqweioncjxfvmncmzvnjfajkdfadjh大嫁风尚克拉的积分jfasdf案范dsalkjjlkasdjf就阿萨德据了解 拉伸的积kdflafjjdffskalfjffffjfjfjfjfjjsaldfjdguoiuqweioncjxfvmncmzvnjfajkdfadjh大嫁风尚克拉的积分jfasdf案范dsalkjjlkasdjf就阿萨德据了解 拉伸的积分" />
+        </LinearLayout>
+
     </SlidingDrawer>
+
     <View
         android:layout_width="match_parent"
         android:layout_height="100dp">
