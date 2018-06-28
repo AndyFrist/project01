@@ -49,5 +49,9 @@ public class MaterialDesignsActivity extends BaseActivity implements View.OnClic
             intent.setClass(this, MaterialDesignActivity3.class);
             startActivity(intent);
         }
+        if (v == material4) {
+            intent.setClass(this, MaterialDesignActivity4.class);
+            startActivity(intent);
+        }
     }
 }
