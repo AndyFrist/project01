@@ -28,7 +28,7 @@ public class SIMCodeActivity extends AppCompatActivity implements ActivityCompat
 
         int permissionCheck = ContextCompat.checkSelfPermission(this, Manifest.permission.READ_PHONE_STATE);
         if (permissionCheck != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_PHONE_STATE}, REQUEST_READ_PHONE_STATE);
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_PHONE_STATE,Manifest.permission.PROCESS_OUTGOING_CALLS,Manifest.permission.WRITE_EXTERNAL_STORAGE}, REQUEST_READ_PHONE_STATE);
         } else {
             text.setText(getCode());
         }
@@ -64,6 +64,8 @@ public class SIMCodeActivity extends AppCompatActivity implements ActivityCompat
         TelephonyManager telManager = (TelephonyManager) getSystemService(TELEPHONY_SERVICE);
 //        String imsi = telManager.getSubscriberId();
         String imsi = telManager.getSimCountryIso();
+
+
         return imsi;
     }
 

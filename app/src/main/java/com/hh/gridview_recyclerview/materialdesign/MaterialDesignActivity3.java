@@ -1,11 +1,14 @@
-package com.hh.gridview_recyclerview.activity;
+package com.hh.gridview_recyclerview.materialdesign;
 
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.AppBarLayout;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.hh.gridview_recyclerview.R;
@@ -26,7 +29,7 @@ public class MaterialDesignActivity3 extends AppCompatActivity implements AppBar
     private ImageView iv_plus;
     private ImageView iv_plusss;
     private ImageView siusiu;
-
+    RecyclerView mRv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,6 +61,24 @@ public class MaterialDesignActivity3 extends AppCompatActivity implements AppBar
         iv_plus.setOnClickListener(this);
         siusiu.setOnClickListener(this);
 
+        mRv = (RecyclerView) findViewById(R.id.rv);
+        mRv.setLayoutManager(new LinearLayoutManager(this));
+        mRv.setAdapter(new RecyclerView.Adapter() {
+            @Override
+            public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+                return null;
+            }
+
+            @Override
+            public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
+
+            }
+
+            @Override
+            public int getItemCount() {
+                return 0;
+            }
+        });
 
     }
 

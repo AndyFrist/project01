@@ -44,11 +44,16 @@
         </android.support.design.widget.CollapsingToolbarLayout>
     </android.support.design.widget.AppBarLayout>
 
-    <android.support.v4.widget.NestedScrollView
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/reFreshLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
+
+        <android.support.v4.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -57,25 +62,44 @@
 
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="350dp"
-                    android:gravity="center_horizontal"
-                    android:padding="20dp"
-                    android:text="上下可以滑动" />
+                    android:layout_height="50dp"
+                    android:text="AAAAA" />
 
-                <TextView
+                <ImageView
                     android:layout_width="match_parent"
-                    android:layout_height="350dp"
-                    android:gravity="center_horizontal"
-                    android:padding="20dp"
-                    android:text="上下可以滑动" />
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/c" />
 
-                <TextView
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="350dp"
-                    android:gravity="center_horizontal"
-                    android:padding="20dp"
-                    android:text="上下可以滑动" />
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:text="AAAAA" />
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:background="#234"
+                    android:layout_width="match_parent"
+                    android:layout_height="350dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:text="AAAAA" />
+                </RelativeLayout>
+
             </LinearLayout>
-    </android.support.v4.widget.NestedScrollView>
+
+        </android.support.v4.widget.NestedScrollView>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv"
+            android:layout_width="match_parent"
+            android:layout_height="1dp" />
+
+    </android.support.v4.widget.SwipeRefreshLayout>
 
 </android.support.design.widget.CoordinatorLayout>

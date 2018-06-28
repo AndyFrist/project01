@@ -7,7 +7,6 @@ import android.widget.Button;
 
 import com.hh.gridview_recyclerview.R;
 import com.hh.gridview_recyclerview.activity.BaseActivity;
-import com.hh.gridview_recyclerview.activity.MaterialDesignActivity3;
 
 public class MaterialDesignsActivity extends BaseActivity implements View.OnClickListener {
 
