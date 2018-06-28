@@ -1,12 +1,13 @@
 package com.hh.gridview_recyclerview.View;
 
 import android.content.Context;
+import android.support.v4.widget.NestedScrollView;
 import android.util.AttributeSet;
 import android.widget.ScrollView;
 
 import com.hh.gridview_recyclerview.utils.LogUtil;
 
-public class PullableScrollView extends ScrollView implements Pullable {
+public class PullableScrollView extends NestedScrollView implements Pullable {
     private static final String TAG = "PullableScrollView";
 
     public PullableScrollView(Context context) {
@@ -37,10 +38,5 @@ public class PullableScrollView extends ScrollView implements Pullable {
             return false;
     }
 
-    @Override
-    protected boolean overScrollBy(int deltaX, int deltaY, int scrollX, int scrollY, int scrollRangeX, int scrollRangeY, int maxOverScrollX, int maxOverScrollY, boolean isTouchEvent) {
-        LogUtil.d(TAG, "deltaX=" + deltaX + "deltaY=" + deltaY + "scrollX=" + scrollX+"scrollY="+ scrollY+"scrollRangeX=" +scrollRangeX+"scrollRangeY="
-                + scrollRangeY+"maxOverScrollX="+maxOverScrollX+"maxOverScrollY="+maxOverScrollY );
-        return super.overScrollBy(deltaX, deltaY, scrollX, scrollY, scrollRangeX, scrollRangeY, maxOverScrollX, maxOverScrollY, isTouchEvent);
-    }
+
 }
