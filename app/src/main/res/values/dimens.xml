@@ -12,4 +12,10 @@
     <dimen name="calendar_min_distance">5dp</dimen>
     <dimen name="auto_scroll_distance">15dp</dimen>
     <integer name="calendar_text_size">13</integer>
+
+
+
+    <dimen name="header_height">60dp</dimen>
+    <dimen name="footer_height">90dp</dimen>
+    <dimen name="footer_padding">10dp</dimen>
 </resources>

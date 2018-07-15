@@ -85,6 +85,7 @@
             android:layout_height="wrap_content"
             android:text="可折叠ListView" />
         <Button
+            android:id="@+id/reflash"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="日历" />

@@ -119,7 +119,11 @@
         <activity android:name=".activity.SocketActivity" />
         <activity android:name=".activity.ExpandableListViewActivity" />
         <activity android:name=".materialdesign.MaterialDesignActivity3" />
-        <activity android:name=".materialdesign.MaterialDesignActivity4"></activity>
+        <activity android:name=".materialdesign.MaterialDesignActivity4"/>
+
+        <activity android:name=".pulltorefresh.MainActivity"/>
+        <activity android:name=".pulltorefresh.XListViewActivity"/>
+        <activity android:name=".pulltorefresh.XScrollViewActivity"/>
     </application>
 
 </manifest>
