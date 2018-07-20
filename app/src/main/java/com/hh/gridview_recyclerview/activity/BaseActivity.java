@@ -57,10 +57,12 @@ public class BaseActivity extends AppCompatActivity {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
 
         ArrayList<String> deniedPermission = new ArrayList<>();
+        int k = 0;
         for (int i : grantResults) {
             if (i != PackageManager.PERMISSION_GRANTED) {
                 deniedPermission.add(permissions[i]);
             }
+            k++;
         }
 
         if (deniedPermission.size() > 0) {

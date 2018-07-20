@@ -99,7 +99,7 @@ public class XListViewActivity extends Activity implements XListView.IXListViewL
     }
 
     private void geneItems() {
-        for (int i = 0; i != 20; ++i) {
+        for (int i = 0; i != 2; ++i) {
             items.add("Test XListView item " + (++mIndex));
         }
     }
