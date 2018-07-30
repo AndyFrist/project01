@@ -16,7 +16,7 @@ import com.hh.gridview_recyclerview.utils.LogUtil;
 public class Main2Activity extends AppCompatActivity implements View.OnClickListener {
     private static final String TAG = "Activitylife";
     private Button btn_left_1, btn_left_2, btn_left_3, btn_left_4, btn_left_5, btn_left_6, btn_left_7, okhttp, myprocess, brokenline, sockeybtn, expandableListView;
-    private Button myimageview, water_id, numberpick, swipemenu, indexbar, webview_id, over_scroll_by, input_soft, pull, animation,reflash;
+    private Button myimageview, water_id, numberpick, swipemenu, indexbar, webview_id, over_scroll_by, input_soft, pull, animation,reflash,android78;
     private Intent intent;
 
     @Override
@@ -75,6 +75,8 @@ public class Main2Activity extends AppCompatActivity implements View.OnClickList
         expandableListView.setOnClickListener(this);
         reflash = (Button) findViewById(R.id.reflash);
         reflash.setOnClickListener(this);
+        android78 = (Button) findViewById(R.id.android78);
+        android78.setOnClickListener(this);
     }
 
     @Override
@@ -148,6 +150,9 @@ public class Main2Activity extends AppCompatActivity implements View.OnClickList
                 break;
                 case R.id.reflash:
                 intent.setClass(this, MainActivity.class);
+                break;
+                case R.id.android78:
+                intent.setClass(this, Android78Activity.class);
                 break;
             default:
 

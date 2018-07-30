@@ -119,11 +119,21 @@
         <activity android:name=".activity.SocketActivity" />
         <activity android:name=".activity.ExpandableListViewActivity" />
         <activity android:name=".materialdesign.MaterialDesignActivity3" />
-        <activity android:name=".materialdesign.MaterialDesignActivity4"/>
+        <activity android:name=".materialdesign.MaterialDesignActivity4" />
+        <activity android:name=".pulltorefresh.MainActivity" />
+        <activity android:name=".pulltorefresh.XListViewActivity" />
+        <activity android:name=".pulltorefresh.XScrollViewActivity" />
+        <activity android:name=".activity.Android78Activity"/>
 
-        <activity android:name=".pulltorefresh.MainActivity"/>
-        <activity android:name=".pulltorefresh.XListViewActivity"/>
-        <activity android:name=".pulltorefresh.XScrollViewActivity"/>
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.hh.gridview_recyclerview.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
     </application>
 
 </manifest>

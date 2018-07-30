@@ -90,6 +90,7 @@
             android:layout_height="wrap_content"
             android:text="日历" />
         <Button
+            android:id="@+id/android78"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="日历" />
