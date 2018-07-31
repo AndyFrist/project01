@@ -7,6 +7,7 @@ import com.hh.gridview_recyclerview.myApplication.AndFixApplication;
 
 import java.math.BigDecimal;
 import java.text.DecimalFormat;
+import java.util.Calendar;
 
 /**
  * Created by Administrator on 2017/11/27.
@@ -37,6 +38,7 @@ public class AndroidUtils {
     public static int getScreenHeight(Context context) {
         return ((WindowManager) context.getSystemService(Context.WINDOW_SERVICE)).getDefaultDisplay().getHeight();
     }
+
     /**
      * @param context
      * @return 状态栏的高度
@@ -61,5 +63,21 @@ public class AndroidUtils {
         DecimalFormat decimalFormat = new DecimalFormat("##0.0000");
         String s = decimalFormat.format(f1);
         return s;
+    }
+
+
+    public static int getYear() {
+        Calendar now = Calendar.getInstance();
+        return now.get(Calendar.YEAR);
+    }
+
+    public static int getMonth() {
+        Calendar now = Calendar.getInstance();
+        return now.get(Calendar.MONTH) + 1;
+    }
+
+    public static int getDay() {
+        Calendar now = Calendar.getInstance();
+        return now.get(Calendar.DAY_OF_MONTH);
     }
 }

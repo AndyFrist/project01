@@ -2,49 +2,68 @@ package com.hh.gridview_recyclerview.activity;
 
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
-import android.widget.LinearLayout;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.hh.gridview_recyclerview.R;
 import com.hh.gridview_recyclerview.View.NumberPickerView;
 import com.hh.gridview_recyclerview.View.SwipeLayout;
-import com.hh.gridview_recyclerview.utils.ToastUtil;
+import com.hh.gridview_recyclerview.dialog.DateDialog;
+import com.hh.gridview_recyclerview.utils.AndroidUtils;
 
-public class NumberPickActivity extends BaseActivity implements NumberPickerView.OnScrollListener, NumberPickerView.OnValueChangeListener ,View.OnClickListener{
+import java.util.ArrayList;
+import java.util.Collections;
+
+public class NumberPickActivity extends BaseActivity implements NumberPickerView.OnScrollListener, NumberPickerView.OnValueChangeListener{
     private static final String TAG = "NumberPickActivity";
     private NumberPickerView picker;
-    private String[] mDisplayValues = new String[24];
 
-    private SwipeLayout sl;
-    private LinearLayout llllc;
-    private TextView tv_name;
-    private TextView tt1,tt2,tt3;
+
+    private ArrayList<String> startYear = new ArrayList<>();
+    private ArrayList<String> startMonth = new ArrayList<>();
+    private ArrayList<String> startDay = new ArrayList<>();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_number_pick);
+
+        //初始化年
+        startYear.add(AndroidUtils.getYear() + "");
+
+        //初始化月
+        for (int i = 0; i < 4; i++) {
+            int currentMonth = AndroidUtils.getMonth();
+            startMonth.add((currentMonth - i) % 13 + "");
+        }
+
+        //初始化天
+        for (int i = 0; i < 31; i++) {
+            int currentDay = AndroidUtils.getDay();
+            startDay.add((currentDay - i) % 32 + "");
+        }
+
+        Collections.reverse(startYear);
+        Collections.reverse(startMonth);
+        Collections.reverse(startDay);
+
+        DateDialog dateDialog = new DateDialog(this);
+        dateDialog.setData(
+                startYear.toArray(new String[startYear.size()]),
+                startMonth.toArray(new String[startMonth.size()]),
+                startDay.toArray(new String[startDay.size()]));
+
+
+
+
+
+
         picker = (NumberPickerView) findViewById(R.id.picker);
         picker.setOnScrollListener(this);
         picker.setOnValueChangedListener(this);
-        for (int i = 0; i < 24; i++) {
-            mDisplayValues[i] = i + "";
-        }
-        picker.refreshByNewDisplayedValues(mDisplayValues);
-        sl = (SwipeLayout) findViewById(R.id.sl);
-        llllc = (LinearLayout) findViewById(R.id.llllc);
-        tv_name = (TextView) findViewById(R.id.tv_name);
-        tv_name.setOnClickListener(this);
-        llllc.setOnClickListener(this);
+        picker.refreshByNewDisplayedValues(startMonth.toArray(new String[startMonth.size()]));
 
-        tt1 = (TextView) findViewById(R.id.tt1);
-        tt1.setOnClickListener(this);
-        tt2 = (TextView) findViewById(R.id.tt2);
-        tt2.setOnClickListener(this);
-        tt3 = (TextView) findViewById(R.id.tt3);
-        tt3.setOnClickListener(this);
+
     }
 
     @Override
@@ -61,25 +80,5 @@ public class NumberPickActivity extends BaseActivity implements NumberPickerView
 
     }
 
-    @Override
-    public void onClick(View view) {
-        if (tv_name == view) {
-            ToastUtil.showToast("tv_name");
-        }
 
-        if (llllc == view) {
-            ToastUtil.showToast("llllc");
-        }
-
-        if (tt1 == view) {
-            ToastUtil.showToast("tt1");
-        }
-
-        if (tt2 == view) {
-            ToastUtil.showToast("tt2");
-        }
-        if (tt3 == view) {
-            ToastUtil.showToast("tt3");
-        }
-    }
 }
