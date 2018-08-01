@@ -17,7 +17,7 @@ import com.hh.gridview_recyclerview.View.NumberPickerView;
  * on 2018/7/31
  * 描述：
  */
-public class DateDialog extends Dialog implements NumberPickerView.OnValueChangeListener {
+public class DateDialog extends Dialog implements NumberPickerView.OnValueChangeListener ,View.OnClickListener{
     private NumberPickerView picker_year, picker_month, picker_day;
     private TextView date_cancel, date_sure;
 
@@ -40,6 +40,8 @@ public class DateDialog extends Dialog implements NumberPickerView.OnValueChange
         picker_year.setOnValueChangedListener(this);
         picker_month.setOnValueChangedListener(this);
         picker_day.setOnValueChangedListener(this);
+        date_cancel.setOnClickListener(this);
+        date_sure.setOnClickListener(this);
 
         setContentView(view, new ViewGroup.LayoutParams(ViewGroup.LayoutParams.FILL_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
         Window window = getWindow();
@@ -80,4 +82,30 @@ public class DateDialog extends Dialog implements NumberPickerView.OnValueChange
     }
 
 
+    @Override
+    public void onClick(View view) {
+        if (date_sure == view) {
+            int yearValue = picker_year.getValue();
+            int monthValue = picker_month.getValue();
+            int dayValue = picker_day.getValue();
+
+            dateListen.getDate(year_data[yearValue] + month_data[monthValue] + day_data[dayValue]);
+
+            dismiss();
+        }
+
+        if (date_cancel == view) {
+            dismiss();
+        }
+    }
+
+    public interface DateListen{
+        void getDate(String date);
+    }
+
+    private DateListen dateListen;
+
+    public void setDateListen(DateListen dateListen) {
+        this.dateListen = dateListen;
+    }
 }
