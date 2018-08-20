@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,42 +7,25 @@
     android:orientation="vertical"
     tools:context="com.hh.gridview_recyclerview.activity.AnimatorActivity">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:gravity="center">
 
         <ImageView
             android:id="@+id/framate"
             android:src="@drawable/anim_self_chat_play"
             android:layout_width="40dp"
             android:layout_height="40dp"/>
-    </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:gravity="center">
 
         <Button
             android:id="@+id/tween"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="补间动画" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:gravity="center">
 
         <Button
             android:id="@+id/objectanimator"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="属性动画" />
-    </LinearLayout>
-</LinearLayout>
+
+
+</RelativeLayout>
