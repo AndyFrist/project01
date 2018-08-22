@@ -2,6 +2,13 @@ package com.hh.gridview_recyclerview.materialdesign;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.CollapsingToolbarLayout;
+import android.support.design.widget.CoordinatorLayout;
+import android.support.design.widget.NavigationView;
+import android.support.design.widget.Snackbar;
+import android.support.design.widget.TabLayout;
+import android.support.design.widget.TextInputEditText;
+import android.support.design.widget.TextInputLayout;
 import android.view.View;
 import android.widget.Button;
 
@@ -54,4 +61,33 @@ public class MaterialDesignsActivity extends BaseActivity implements View.OnClic
             startActivity(intent);
         }
     }
+
+
+
 }
+
+/**
+ *
+ ****************** MaterialDesign 八大控件 *****************
+ *
+ *      TabLayout     配合ViewPager使用到达导航的效果
+ *
+ *      NavigationView  来源自menuItem 实现一个骚效果 参照本项目的TabLauyoutActivity中代码
+ *
+ *      Snackbar
+ *
+ *      CoordinatorLayout   可以理解成FrameLayout ，但是可以结合behavior实现一些炫的效果
+ *
+ *      AppBarLayout extends LinearLayout 就相当于垂直方向上的 LinearLayout
+ *
+ *      CollapsingToolbarLayout 可折叠的ToolbarLayout
+ *
+ *      FloatingActionButton 相当于imageButton 是一个悬浮的ImageButton
+ *
+ *      TextInputLayout  包裹Edittext 提升editext的功能
+ *
+ *
+ *
+ *
+ *
+ */
