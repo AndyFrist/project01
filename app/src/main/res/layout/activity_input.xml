@@ -3,6 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
+    android:clickable="true"
+    android:fitsSystemWindows="true"
     android:orientation="vertical">
 
     <!--透明状态栏 时加上这三句代码后即可解决软键盘挡住edittext问题-->

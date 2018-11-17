@@ -30,6 +30,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     private Button touchListen;
     private Button retrofit;
     private Button rx_java;
+    private Button webview_music;
 
     private Button fragment, map_btn, surfaceview, drawView, myseekBar, touchlove, lottie, simcode, camera2btn, camerabtn, tth, windowmanger, six_principle;
 
@@ -72,6 +73,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         windowmanger = (Button) findViewById(R.id.windowmanger);
         six_principle = (Button) findViewById(R.id.six_principle);
         map_btn = (Button) findViewById(R.id.map_btn);
+        webview_music = (Button) findViewById(R.id.webview_music);
 
 
         map_btn.setOnClickListener(this);
@@ -98,6 +100,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         tth.setOnClickListener(this);
         windowmanger.setOnClickListener(this);
         six_principle.setOnClickListener(this);
+        webview_music.setOnClickListener(this);
     }
 
     @Override
@@ -203,6 +206,10 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 break;
             case R.id.six_principle:
                 intent.setClass(this, PrincipleActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.webview_music:
+                intent.setClass(this, WebviewMusicActivity.class);
                 startActivity(intent);
                 break;
         }

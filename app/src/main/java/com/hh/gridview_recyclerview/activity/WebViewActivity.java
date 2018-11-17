@@ -86,7 +86,7 @@ public class WebViewActivity extends AppCompatActivity implements View.OnClickLi
         });
 
         //允许浏览器调试
-//        my_webview.setWebContentsDebuggingEnabled(true);
+        my_webview.setWebContentsDebuggingEnabled(true);
     }
 
 

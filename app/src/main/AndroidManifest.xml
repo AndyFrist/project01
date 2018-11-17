@@ -123,7 +123,7 @@
         <activity android:name=".pulltorefresh.MainActivity" />
         <activity android:name=".pulltorefresh.XListViewActivity" />
         <activity android:name=".pulltorefresh.XScrollViewActivity" />
-        <activity android:name=".activity.Android78Activity"/>
+        <activity android:name=".activity.Android78Activity" />
 
         <provider
             android:name="android.support.v4.content.FileProvider"
@@ -134,6 +134,8 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/file_paths" />
         </provider>
+
+        <activity android:name=".activity.WebviewMusicActivity"></activity>
     </application>
 
 </manifest>
