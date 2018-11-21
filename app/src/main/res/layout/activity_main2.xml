@@ -170,6 +170,6 @@
             android:id="@+id/clock"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="高仿支付宝扫码" />
+            android:text="锁屏广播监听" />
     </LinearLayout>
 </LinearLayout>
