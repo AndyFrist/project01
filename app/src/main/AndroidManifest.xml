@@ -32,7 +32,9 @@
             android:name="com.google.android.gms.vision"
             android:value="@integer/google_play_services_version" />
 
-        <activity android:name=".activity.MainActivity">
+        <activity
+            android:name=".activity.MainActivity"
+            android:launchMode="singleTask">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -135,7 +137,8 @@
                 android:resource="@xml/file_paths" />
         </provider>
 
-        <activity android:name=".activity.WebviewMusicActivity"></activity>
+        <activity android:name=".activity.WebviewMusicActivity" />
+        <activity android:name=".activity.ClockActivity"></activity>
     </application>
 
 </manifest>

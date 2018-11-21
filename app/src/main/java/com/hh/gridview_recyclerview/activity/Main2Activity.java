@@ -17,7 +17,7 @@ import com.qrphoto.qr.QrActivity;
 public class Main2Activity extends AppCompatActivity implements View.OnClickListener {
     private static final String TAG = "Activitylife";
     private Button btn_left_1, btn_left_2, btn_left_3, btn_left_4, btn_left_5, btn_left_6, btn_left_7, okhttp, myprocess, brokenline, sockeybtn, expandableListView;
-    private Button myimageview, water_id, numberpick, swipemenu, indexbar, webview_id, over_scroll_by, input_soft, pull, animation, reflash, android78, alipay_qrcode;
+    private Button myimageview, water_id, numberpick, swipemenu, indexbar, webview_id, over_scroll_by, input_soft, pull, animation, reflash, android78, alipay_qrcode,clock;
     private Intent intent;
 
     @Override
@@ -80,6 +80,8 @@ public class Main2Activity extends AppCompatActivity implements View.OnClickList
         android78.setOnClickListener(this);
         alipay_qrcode = (Button) findViewById(R.id.alipay_qrcode);
         alipay_qrcode.setOnClickListener(this);
+        clock = (Button) findViewById(R.id.clock);
+        clock.setOnClickListener(this);
     }
 
     @Override
@@ -158,17 +160,21 @@ public class Main2Activity extends AppCompatActivity implements View.OnClickList
                 intent.setClass(this, Android78Activity.class);
                 break;
             case R.id.alipay_qrcode:
-                Intent intent = new Intent(this, com.qrphoto.qr.QrActivity.class);
-                intent.putExtra("title","二维码扫描");
-                intent.putExtra("text","扫描中。。。");
-                startActivityForResult(intent,1000);
+                Intent intent1 = new Intent(this, com.qrphoto.qr.QrActivity.class);
+                intent1.putExtra("title","二维码扫描");
+                intent1.putExtra("text","扫描中。。。");
+                startActivityForResult(intent1,1000);
 
+                break;
+
+            case R.id.clock:
+                intent.setClass(this, ClockActivity.class);
                 break;
             default:
 
         }
 //        startService(intent);
-//        startActivity(intent);
+        startActivity(intent);
     }
 
     @Override

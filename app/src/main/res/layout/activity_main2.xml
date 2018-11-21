@@ -166,5 +166,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="高仿支付宝扫码" />
+        <Button
+            android:id="@+id/clock"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="高仿支付宝扫码" />
     </LinearLayout>
 </LinearLayout>
