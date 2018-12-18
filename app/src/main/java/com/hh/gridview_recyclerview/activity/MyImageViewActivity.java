@@ -34,7 +34,6 @@ public class MyImageViewActivity extends AppCompatActivity implements View.OnCli
         post_value_bind.setOnClickListener(this);
         get_value_bind = (Button) findViewById(R.id.get_value_bind);
         get_value_bind.setOnClickListener(this);
-
     }
 
     @Override
@@ -49,13 +48,25 @@ public class MyImageViewActivity extends AppCompatActivity implements View.OnCli
             intent.putExtra("start_value", "我来自activity的值");
             startService(intent);
         }
+        //得到服务的值
+        if (v == get_value_start) {
+
+        }
+        //绑定服务
         if (v == bind_service) {
             myConn = new MyConn();
             bindService(new Intent(this, ForgoundService.class), myConn, BIND_AUTO_CREATE);
         }
+        //传值给服务 bind
+        if (v == post_value_bind) {
+
+        }
+        //获取到服务的值
         if (v == get_value_bind) {
-            String ban = myIBinder.ban("李娜");
-            LogUtil.d("李娜",ban);
+            if (myIBinder != null) {
+                String ban = myIBinder.ban("李娜");
+                LogUtil.d("李娜",ban);
+            }
         }
     }
 
