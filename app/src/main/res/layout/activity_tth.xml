@@ -10,7 +10,7 @@
         android:id="@+id/mytext"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="ii love you android" />
+        android:text="支付宝到账10万元" />
 
     <Button
         android:layout_width="368dp"

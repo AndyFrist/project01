@@ -3,8 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/project01.iml" filepath="$PROJECT_DIR$/project01.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/project01.iml" filepath="$PROJECT_DIR$/.idea/project01.iml" />
+      <module fileurl="file://$PROJECT_DIR$/project01.iml" filepath="$PROJECT_DIR$/project01.iml" />
       <module fileurl="file://$PROJECT_DIR$/qrlibs/qrlibs.iml" filepath="$PROJECT_DIR$/qrlibs/qrlibs.iml" />
     </modules>
   </component>
