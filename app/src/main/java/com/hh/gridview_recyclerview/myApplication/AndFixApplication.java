@@ -11,6 +11,7 @@ import android.util.LruCache;
 import android.view.WindowManager;
 
 import com.alipay.euler.andfix.patch.PatchManager;
+import org.xutils.x;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;
@@ -40,6 +41,7 @@ public class AndFixApplication extends MultiDexApplication {
         mPatchManager.loadPatch();
         //设置字体
         initfonts();
+        x.Ext.init(this);
     }
 
     private static ArrayList<Activity> activityArrayList = new ArrayList<>();

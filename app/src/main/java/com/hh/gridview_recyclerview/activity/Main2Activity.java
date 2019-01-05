@@ -17,7 +17,7 @@ import com.qrphoto.qr.QrActivity;
 public class Main2Activity extends AppCompatActivity implements View.OnClickListener {
     private static final String TAG = "Activitylife";
     private Button btn_left_1, btn_left_2, btn_left_3, btn_left_4, btn_left_5, btn_left_6, btn_left_7, okhttp, myprocess, brokenline, sockeybtn, expandableListView;
-    private Button myimageview, water_id, numberpick, swipemenu, indexbar, webview_id, over_scroll_by, input_soft, pull, animation, reflash, android78, alipay_qrcode,clock;
+    private Button myimageview, water_id, numberpick, swipemenu, indexbar, webview_id, over_scroll_by, input_soft, pull, animation, reflash, android78, alipay_qrcode,clock,pdfread;
     private Intent intent;
 
     @Override
@@ -82,6 +82,8 @@ public class Main2Activity extends AppCompatActivity implements View.OnClickList
         alipay_qrcode.setOnClickListener(this);
         clock = (Button) findViewById(R.id.clock);
         clock.setOnClickListener(this);
+        pdfread = (Button) findViewById(R.id.pdfread);
+        pdfread.setOnClickListener(this);
     }
 
     @Override
@@ -169,6 +171,10 @@ public class Main2Activity extends AppCompatActivity implements View.OnClickList
 
             case R.id.clock:
                 intent.setClass(this, ClockActivity.class);
+                break;
+
+                case R.id.pdfread:
+                intent.setClass(this, PdfActivity.class);
                 break;
             default:
 

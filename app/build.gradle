@@ -55,4 +55,6 @@ dependencies {
     testCompile 'junit:junit:4.12'
     compile files('libs/pinyin4j-2.5.0.jar')
     compile project(':qrlibs')
+    compile 'com.github.barteksc:android-pdf-viewer:2.4.0'
+    compile 'org.xutils:xutils:3.3.40'
 }

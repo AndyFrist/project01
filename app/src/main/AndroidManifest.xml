@@ -138,7 +138,8 @@
         </provider>
 
         <activity android:name=".activity.WebviewMusicActivity" />
-        <activity android:name=".activity.ClockActivity"></activity>
+        <activity android:name=".activity.ClockActivity" />
+        <activity android:name=".activity.PdfActivity"></activity>
     </application>
 
 </manifest>

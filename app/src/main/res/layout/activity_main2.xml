@@ -171,5 +171,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="锁屏广播监听" />
+        <Button
+            android:id="@+id/pdfread"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="pdf在线阅读" />
     </LinearLayout>
 </LinearLayout>
