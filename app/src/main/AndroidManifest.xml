@@ -139,7 +139,8 @@
 
         <activity android:name=".activity.WebviewMusicActivity" />
         <activity android:name=".activity.ClockActivity" />
-        <activity android:name=".activity.PdfActivity"></activity>
+        <activity android:name=".activity.PdfActivity" />
+        <activity android:name=".activity.FddfActivity"></activity>
     </application>
 
 </manifest>

@@ -174,7 +174,7 @@ public class Main2Activity extends AppCompatActivity implements View.OnClickList
                 break;
 
                 case R.id.pdfread:
-                intent.setClass(this, PdfActivity.class);
+                intent.setClass(this, FddfActivity.class);
                 break;
             default:
 
