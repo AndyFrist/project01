@@ -9,6 +9,13 @@
     <com.bm.library.PhotoView
         android:id="@+id/photoview"
         android:layout_width="match_parent"
+        android:visibility="gone"
         android:layout_height="match_parent"/>
+    <com.davemorrissey.labs.subscaleview.SubsamplingScaleImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        app:quickScaleEnabled="true"
+        android:layout_height="match_parent"/>
+
 
 </android.support.constraint.ConstraintLayout>
