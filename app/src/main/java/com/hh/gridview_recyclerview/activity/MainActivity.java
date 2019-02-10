@@ -32,7 +32,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     private Button rx_java;
     private Button webview_music;
 
-    private Button fragment, map_btn, surfaceview, drawView, myseekBar, touchlove, lottie, simcode, camera2btn, camerabtn, tth, windowmanger, six_principle;
+    private Button fragment, map_btn, surfaceview, drawView, myseekBar, touchlove, lottie, simcode, camera2btn, camerabtn, tth, windowmanger, six_principle,longimage;
 
 
     private Intent intent;
@@ -74,6 +74,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         six_principle = (Button) findViewById(R.id.six_principle);
         map_btn = (Button) findViewById(R.id.map_btn);
         webview_music = (Button) findViewById(R.id.webview_music);
+        longimage = (Button) findViewById(R.id.longimage);
 
 
         map_btn.setOnClickListener(this);
@@ -101,6 +102,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         windowmanger.setOnClickListener(this);
         six_principle.setOnClickListener(this);
         webview_music.setOnClickListener(this);
+        longimage.setOnClickListener(this);
     }
 
     @Override
@@ -210,6 +212,10 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 break;
             case R.id.webview_music:
                 intent.setClass(this, WebviewMusicActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.longimage:
+                intent.setClass(this, LongImageActivity.class);
                 startActivity(intent);
                 break;
         }
