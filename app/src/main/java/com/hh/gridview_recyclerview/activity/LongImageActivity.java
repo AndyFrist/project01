@@ -113,7 +113,14 @@ public class LongImageActivity extends AppCompatActivity {
         });
 
 //        final int pos = position;
-        // imageView.setMinimumScaleType(SubsamplingScaleImageView.SCALE_TYPE_CUSTOM);
+        // imageView.setMinimumScaleType(Subsamp
+        //
+        //
+        //
+        //
+        //
+        //
+        // lingScaleImageView.SCALE_TYPE_CUSTOM);
         imageView.setMaxScale(15);
         imageView.setZoomEnabled(true);
         // spinner.setVisibility(View.GONE);
