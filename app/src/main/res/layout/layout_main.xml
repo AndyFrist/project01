@@ -33,7 +33,7 @@
             android:textSize="22sp"/>
     </LinearLayout>
     <TextView android:layout_width="match_parent"
-              android:text="中国华人民共和国万岁！"
+              android:text="特朗普真没普！"
               android:textColor="#000000"
               android:textSize="30sp"
               android:gravity="center"

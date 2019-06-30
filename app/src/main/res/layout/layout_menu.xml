@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="240dp"
+    android:layout_width="230dp"
     android:layout_height="match_parent"
     android:background="@drawable/menu_bg"
     android:orientation="vertical" >
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="230dp"
         android:layout_height="wrap_content"
-        android:paddingBottom="300dp"
+        android:paddingBottom="500dp"
+        android:gravity="end"
         android:orientation="vertical" >
         
         <TextView 
