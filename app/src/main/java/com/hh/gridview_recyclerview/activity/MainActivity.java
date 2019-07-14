@@ -15,6 +15,7 @@ import com.hh.gridview_recyclerview.callListener.androidbroadcast.PhoneStateRece
 import com.hh.gridview_recyclerview.myinteraface.PermissionListener;
 import com.hh.gridview_recyclerview.recyclerView.HomeActivity;
 import com.hh.gridview_recyclerview.utils.IntentUtils;
+import com.hh.gridview_recyclerview.utils.ToastUtil;
 
 import java.util.ArrayList;
 
@@ -105,6 +106,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         longimage.setOnClickListener(this);
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
@@ -191,12 +193,37 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 startActivity(intent);
                 break;
             case R.id.camera2btn:
-                intent.setClass(this, Camera2Activity.class);
-                startActivity(intent);
+                BaseActivity.requestPermissionss(new String[]{Manifest.permission.CAMERA}, new PermissionListener() {
+
+                    @Override
+                    public void onGranted() {
+                        intent.setClass(MainActivity.this, Camera2Activity.class);
+                        startActivity(intent);
+                    }
+
+                    @Override
+                    public void onDenied(ArrayList<String> deniedPermission) {
+                        ToastUtil.showToast("权限被拒绝了");
+                    }
+                });
+
                 break;
             case R.id.camerabtn:
-                intent.setClass(this, CameraActivity.class);
-                startActivity(intent);
+
+                BaseActivity.requestPermissionss(new String[]{Manifest.permission.CAMERA}, new PermissionListener() {
+
+                    @Override
+                    public void onGranted() {
+                        intent.setClass(MainActivity.this, CameraActivity.class);
+                        startActivity(intent);
+                    }
+
+                    @Override
+                    public void onDenied(ArrayList<String> deniedPermission) {
+                        ToastUtil.showToast("权限被拒绝了");
+                    }
+                });
+
                 break;
             case R.id.tth:
                 intent.setClass(this, TTHActivity.class);
@@ -219,23 +246,5 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 startActivity(intent);
                 break;
         }
-    }
-
-    @RequiresApi(api = Build.VERSION_CODES.M)
-    @Override
-    protected void onResume() {
-        super.onResume();
-        BaseActivity.requestPermissionss(new String[]{Manifest.permission.CAMERA}, new PermissionListener() {
-
-            @Override
-            public void onGranted() {
-
-            }
-
-            @Override
-            public void onDenied(ArrayList<String> deniedPermission) {
-
-            }
-        });
     }
 }

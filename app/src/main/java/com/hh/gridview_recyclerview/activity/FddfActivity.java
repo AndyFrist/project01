@@ -42,7 +42,8 @@ import okio.Sink;
 
 public class FddfActivity extends AppCompatActivity {
 
-    private String mPdfUrl = "http://pdf.dfcfw.com/pdf/H2_AN201807051163584888_1.pdf";
+//    private String mPdfUrl = "http://pdf.dfcfw.com/pdf/H2_AN201807051163584888_1.pdf";
+    private String mPdfUrl = "https://evp-core-dmzstg1.pingan.com.cn:40440/evp-core-dmz/evp.visit.portal.url.view.do?str=ghsd5UtWrTUBpXXaDZlQ2LhPp0C56xKhdxxB3aGm4O9wzsWMaI%2BX8gUZrSZw6aRYEimnKCBCLOH3%0AfCDuEYQ%2Fte1T4b4rx53T87eGQyVSCrkiugOR0i8vBWKrAc0ViKQoxeST90ZMQ0uioA68HtpOtJ%2FW%0AwI%2Bxw8I0yLIdEm%2FG850%3D";
     private static final int REQUEST_EXTERNAL_STORAGE = 1;
     private static String[] PERMISSIONS_STORAGE = {
             Manifest.permission.READ_EXTERNAL_STORAGE,
@@ -105,7 +106,7 @@ public class FddfActivity extends AppCompatActivity {
      */
     private void DownloadPdf() {
         cacheUrl = getCacheDir().getAbsolutePath();//应用缓存路径
-        pdfName = mPdfUrl.substring(mPdfUrl.lastIndexOf("/") + 1);//文件名称
+        pdfName = mPdfUrl.substring(mPdfUrl.lastIndexOf("/") + 1) + ".png";//文件名称
         final File dest = new File(cacheUrl, pdfName);
         if (dest.exists()) {
             SeePdf(dest);

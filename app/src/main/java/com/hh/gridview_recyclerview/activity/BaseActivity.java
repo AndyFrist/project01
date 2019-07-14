@@ -38,17 +38,20 @@ public class BaseActivity extends AppCompatActivity {
     private static PermissionListener listener;
 
     @RequiresApi(api = Build.VERSION_CODES.M)
-    public static void requestPermissionss(String[] permissions, PermissionListener listen) {
+    public static void requestPermissionss(String[] permissions, @NonNull PermissionListener listen) {
         listener = listen;
         Activity activity = AndFixApplication.getTopActivity();
-        List<String> permissionList = new ArrayList<>();
+        List<String> permissionList = new ArrayList<>();//没有被同意的权限列表
         for (String permission : permissions) {
             if (ContextCompat.checkSelfPermission(activity, permission) != PackageManager.PERMISSION_GRANTED) {
+                //检查统计没有被同意的权限
                 permissionList.add(permission);
             }
         }
         if (!permissionList.isEmpty()) {
             ActivityCompat.requestPermissions(activity, permissionList.toArray(new String[permissionList.size()]), 1);
+        }else{
+            listener.onGranted();
         }
     }
 
@@ -56,11 +59,12 @@ public class BaseActivity extends AppCompatActivity {
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
 
-        ArrayList<String> deniedPermission = new ArrayList<>();
+        ArrayList<String> deniedPermission = new ArrayList<>();//被拒绝的权限列表
         int k = 0;
         for (int i : grantResults) {
             if (i != PackageManager.PERMISSION_GRANTED) {
-                deniedPermission.add(permissions[i]);
+                //检查统计被拒绝的权限
+                deniedPermission.add(permissions[k]);
             }
             k++;
         }
