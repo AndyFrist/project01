@@ -60,6 +60,10 @@ public class MaterialDesignsActivity extends BaseActivity implements View.OnClic
             intent.setClass(this, MaterialDesignActivity4.class);
             startActivity(intent);
         }
+        if (v == material5) {
+            intent.setClass(this, MaterialDesignActivity5.class);
+            startActivity(intent);
+        }
     }
 
 
