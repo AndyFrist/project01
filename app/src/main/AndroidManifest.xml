@@ -43,47 +43,33 @@
         <activity android:name=".activity.RecyclerActivity" />
         <activity android:name=".activity.GridViewActivity" />
         <activity android:name=".activity.CoordinatorLayoutActivity" />
-        <activity android:name=".activity.HotRepairActivity" />
         <activity android:name=".activity.SlidingDrawerActivity" />
         <activity android:name=".activity.DrawlayoutActivity" />
         <activity android:name=".activity.SlideMenuActivity" />
         <activity android:name=".activity.BitmapActivity" />
-        <activity android:name=".activity.BigBitMapActivity" />
         <activity android:name=".activity.TouchListenActivity" />
-        <activity
-            android:name=".activity.RetrofitActivity"
-            android:label="@string/title_activity_retrofit"
-            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".recyclerView.StaggeredGridLayoutActivity" />
         <activity
             android:name=".recyclerView.HomeActivity"
             android:theme="@style/Theme.AppCompat.Light.DarkActionBar" />
-        <activity android:name=".activity.RxJavaActivity" />
-        <activity android:name=".activity.FragmentActivity" />
         <activity android:name=".activity.SurfaceViewActivity" />
         <activity android:name=".activity.DragViewActivity" />
         <activity android:name=".activity.MyseekbarActivity" />
         <activity android:name=".activity.TestPraiseActivity" />
-        <activity android:name=".activity.LottieActivity" />
-        <activity android:name=".activity.SIMCodeActivity" />
         <activity
             android:name=".activity.CameraActivity"
             android:theme="@style/activityTheme" />
         <activity android:name=".activity.TTHActivity" />
         <activity android:name=".activity.Camera2Activity" />
-        <activity android:name=".activity.WinowMangerActivity" />
         <activity
             android:name=".activity.PrincipleActivity"
             android:label="@string/title_activity_principle"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".activity.MapActivity" />
-        <activity android:name=".activity.LocationActivity" />
         <activity android:name=".activity.Main2Activity" />
-        <activity android:name=".activity.HnadlerThreadActivity" />
         <activity android:name=".activity.TabLauyoutActivity" />
         <activity android:name=".activity.MyrecycleviewActivity" />
         <activity android:name=".materialdesign.MaterialDesignActivity1" />
-        <activity android:name=".activity.OkhttpActivity" />
         <activity android:name=".activity.RingProcessActivity" />
         <activity android:name=".activity.BrokenlineActivity" />
         <activity android:name=".activity.MyImageViewActivity" />
@@ -102,7 +88,7 @@
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize" />
 
-        <uses-permission android:name="android.permission.WAKE_LOCK" />
+<!--        <uses-permission android:name="android.permission.WAKE_LOCK" />-->
 
         <activity android:name=".activity.PullActivity" />
         <activity android:name=".activity.AnimatorActivity" />
@@ -135,8 +121,6 @@
 
         <activity android:name=".activity.WebviewMusicActivity" />
         <activity android:name=".activity.ClockActivity" />
-        <activity android:name=".activity.PdfActivity" />
-        <activity android:name=".activity.FddfActivity" />
         <activity android:name=".activity.LongImageActivity" />
     </application>
 

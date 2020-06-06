@@ -5,12 +5,6 @@
     android:orientation="vertical">
 
     <Button
-        android:id="@+id/fragment"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="fragment生命周期" />
-
-    <Button
         android:id="@+id/surfaceview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -35,18 +29,6 @@
         android:text="点击爱心" />
 
     <Button
-        android:id="@+id/lottie"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="lottie动画框架" />
-
-    <Button
-        android:id="@+id/simcode"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="运营商代号" />
-
-    <Button
         android:id="@+id/camera2btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -64,12 +46,6 @@
         android:layout_height="wrap_content"
         android:text="文字转语音" />
 
-
-    <Button
-        android:id="@+id/windowmanger"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="windowmanger" />
 
     <Button
         android:id="@+id/six_principle"

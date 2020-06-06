@@ -1,7 +1,7 @@
 package com.hh.gridview_recyclerview.recyclerView;
 
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
@@ -15,7 +15,7 @@ import com.hh.gridview_recyclerview.R;
 import java.util.ArrayList;
 import java.util.List;
 
-public class StaggeredGridLayoutActivity extends ActionBarActivity {
+public class StaggeredGridLayoutActivity extends AppCompatActivity {
 
     private RecyclerView mRecyclerView;
     private List<String> mDatas;

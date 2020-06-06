@@ -20,23 +20,11 @@
             android:text="gridview" />
 
         <Button
-            android:id="@+id/btn_left_3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="手机定位" />
-
-        <Button
             android:id="@+id/btn_left_2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="折线图" />
 
-
-        <Button
-            android:id="@+id/btn_left_4"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="activity生命周期" />
 
         <Button
             android:id="@+id/btn_left_5"
@@ -55,12 +43,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="MaterialDesig" />
-
-        <Button
-            android:id="@+id/okhttp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="okhttp" />
 
         <Button
             android:id="@+id/myprocess"
@@ -84,16 +66,18 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="可折叠ListView" />
+
         <Button
             android:id="@+id/reflash"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="日历" />
+            android:text="下拉刷新" />
+
         <Button
             android:id="@+id/android78"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="日历" />
+            android:text="换头像" />
     </LinearLayout>
 
     <LinearLayout
@@ -161,20 +145,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="动画集合" />
-        <Button
-            android:id="@+id/alipay_qrcode"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="高仿支付宝扫码" />
+
         <Button
             android:id="@+id/clock"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="锁屏广播监听" />
-        <Button
-            android:id="@+id/pdfread"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="pdf在线阅读" />
     </LinearLayout>
 </LinearLayout>

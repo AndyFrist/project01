@@ -11,22 +11,11 @@ import android.util.Log;
 import android.util.LruCache;
 import android.view.WindowManager;
 
-import com.alipay.euler.andfix.patch.PatchManager;
-import com.hh.gridview_recyclerview.utils.ToastUtil;
-import com.tencent.tinker.entry.ApplicationLike;
-import com.tencent.tinker.lib.service.PatchResult;
-import com.tinkerpatch.sdk.TinkerPatch;
-import com.tinkerpatch.sdk.loader.TinkerPatchApplicationLike;
-import com.tinkerpatch.sdk.server.callback.ConfigRequestCallback;
-import com.tinkerpatch.sdk.tinker.callback.ResultCallBack;
 
-import org.xutils.x;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;
-import java.util.HashMap;
 
-import rx.annotations.Beta;
 
 /**
  * Created by 徐小鹏 on 2017/2/8.
@@ -35,28 +24,17 @@ import rx.annotations.Beta;
  */
 
 public class AndFixApplication extends MultiDexApplication {
-    public static PatchManager mPatchManager;
 
     @Override
     public void onCreate() {
         super.onCreate();
         appContext = getApplicationContext();
-        // 初始化patch管理类
-        mPatchManager = new PatchManager(this);
 
-        // 初始化patch版本
-        mPatchManager.init("1.0");
-//        String appVersion = getPackageManager().getPackageInfo(getPackageName(), 0).versionName;
-//        mPatchManager.init(appVersion);
-
-        // 加载已经添加到PatchManager中的patch
-        mPatchManager.loadPatch();
         //设置字体
         initfonts();
-        x.Ext.init(this);
 
 
-        initTinkerPatch();
+
     }
 
     private static ArrayList<Activity> activityArrayList = new ArrayList<>();
@@ -129,23 +107,6 @@ public class AndFixApplication extends MultiDexApplication {
         }
     }
 
-    /**
-     * 我们需要确保至少对主进程跟patch进程初始化 TinkerPatch
-     */
-    private void initTinkerPatch() {
 
-        // 我们可以从这里获得Tinker加载过程的信息
-        ApplicationLike tinkerApplicationLike = TinkerPatchApplicationLike.getTinkerPatchApplicationLike();
-
-        // 初始化TinkerPatch SDK, 更多配置可参照API章节中的,初始化SDK
-        TinkerPatch.init(tinkerApplicationLike)
-                .reflectPatchLibrary()
-                .setPatchRollbackOnScreenOff(true)
-                .setPatchRestartOnSrceenOff(true)
-                .setFetchPatchIntervalByHours(3);
-
-        // 每隔3个小时(通过setFetchPatchIntervalByHours设置)去访问后台时候有更新,通过handler实现轮训的效果
-        TinkerPatch.with().fetchPatchUpdateAndPollWithInterval();
-    }
 
 }

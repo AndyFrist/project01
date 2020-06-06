@@ -12,12 +12,11 @@ import com.hh.gridview_recyclerview.R;
 import com.hh.gridview_recyclerview.materialdesign.MaterialDesignsActivity;
 import com.hh.gridview_recyclerview.pulltorefresh.MainActivity;
 import com.hh.gridview_recyclerview.utils.LogUtil;
-import com.qrphoto.qr.QrActivity;
 
 public class Main2Activity extends AppCompatActivity implements View.OnClickListener {
     private static final String TAG = "Activitylife";
-    private Button btn_left_1, btn_left_2, btn_left_3, btn_left_4, btn_left_5, btn_left_6, btn_left_7, okhttp, myprocess, brokenline, sockeybtn, expandableListView;
-    private Button myimageview, water_id, numberpick, swipemenu, indexbar, webview_id, over_scroll_by, input_soft, pull, animation, reflash, android78, alipay_qrcode,clock,pdfread;
+    private Button btn_left_1, btn_left_2,   btn_left_5, btn_left_6, btn_left_7,  myprocess, brokenline, sockeybtn, expandableListView;
+    private Button myimageview, water_id, numberpick, swipemenu, indexbar, webview_id, over_scroll_by, input_soft, pull, animation, reflash, android78, clock;
     private Intent intent;
 
     @Override
@@ -34,19 +33,14 @@ public class Main2Activity extends AppCompatActivity implements View.OnClickList
         btn_left_1.setOnClickListener(this);
         btn_left_2 = (Button) findViewById(R.id.btn_left_2);
         btn_left_2.setOnClickListener(this);
-        btn_left_3 = (Button) findViewById(R.id.btn_left_3);
-        btn_left_3.setOnClickListener(this);
-        btn_left_4 = (Button) findViewById(R.id.btn_left_4);
-        btn_left_4.setOnClickListener(this);
+
         btn_left_5 = (Button) findViewById(R.id.btn_left_5);
         btn_left_5.setOnClickListener(this);
         btn_left_6 = (Button) findViewById(R.id.btn_left_6);
         btn_left_6.setOnClickListener(this);
         btn_left_7 = (Button) findViewById(R.id.btn_left_7);
         btn_left_7.setOnClickListener(this);
-        okhttp = (Button) findViewById(R.id.okhttp);
-        okhttp.setOnClickListener(this);
-        myprocess = (Button) findViewById(R.id.myprocess);
+            myprocess = (Button) findViewById(R.id.myprocess);
         myprocess.setOnClickListener(this);
         brokenline = (Button) findViewById(R.id.brokenline);
         brokenline.setOnClickListener(this);
@@ -78,12 +72,10 @@ public class Main2Activity extends AppCompatActivity implements View.OnClickList
         reflash.setOnClickListener(this);
         android78 = (Button) findViewById(R.id.android78);
         android78.setOnClickListener(this);
-        alipay_qrcode = (Button) findViewById(R.id.alipay_qrcode);
-        alipay_qrcode.setOnClickListener(this);
+
         clock = (Button) findViewById(R.id.clock);
         clock.setOnClickListener(this);
-        pdfread = (Button) findViewById(R.id.pdfread);
-        pdfread.setOnClickListener(this);
+
     }
 
     @Override
@@ -95,13 +87,7 @@ public class Main2Activity extends AppCompatActivity implements View.OnClickList
             case R.id.btn_left_2:
                 intent.setClass(this, RecyclerActivity.class);
                 break;
-            case R.id.btn_left_3:
-                intent.setClass(this, LocationActivity.class);
-                break;
-            case R.id.btn_left_4:
-                intent.setClass(this, HnadlerThreadActivity.class);
-                break;
-            case R.id.btn_left_5:
+                     case R.id.btn_left_5:
                 intent.setClass(this, TabLauyoutActivity.class);
                 break;
             case R.id.btn_left_6:
@@ -109,9 +95,6 @@ public class Main2Activity extends AppCompatActivity implements View.OnClickList
                 break;
             case R.id.btn_left_7:
                 intent.setClass(this, MaterialDesignsActivity.class);
-                break;
-            case R.id.okhttp:
-                intent.setClass(this, OkhttpActivity.class);
                 break;
             case R.id.myprocess:
                 intent.setClass(this, RingProcessActivity.class);
@@ -161,21 +144,10 @@ public class Main2Activity extends AppCompatActivity implements View.OnClickList
             case R.id.android78:
                 intent.setClass(this, Android78Activity.class);
                 break;
-            case R.id.alipay_qrcode:
-                Intent intent1 = new Intent(this, com.qrphoto.qr.QrActivity.class);
-                intent1.putExtra("title","二维码扫描");
-                intent1.putExtra("text","扫描中。。。");
-                startActivityForResult(intent1,1000);
-
-                break;
-
             case R.id.clock:
                 intent.setClass(this, ClockActivity.class);
                 break;
 
-                case R.id.pdfread:
-                intent.setClass(this, FddfActivity.class);
-                break;
             default:
 
         }

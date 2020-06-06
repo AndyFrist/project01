@@ -2,7 +2,6 @@ package com.hh.gridview_recyclerview.activity;
 
 import android.Manifest;
 import android.content.Intent;
-import android.content.IntentFilter;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.RequiresApi;
@@ -10,8 +9,6 @@ import android.view.View;
 import android.widget.Button;
 
 import com.hh.gridview_recyclerview.R;
-import com.hh.gridview_recyclerview.callListener.androidbroadcast.MyPhoneBroadcastListener;
-import com.hh.gridview_recyclerview.callListener.androidbroadcast.PhoneStateReceiver;
 import com.hh.gridview_recyclerview.myinteraface.PermissionListener;
 import com.hh.gridview_recyclerview.recyclerView.HomeActivity;
 import com.hh.gridview_recyclerview.utils.IntentUtils;
@@ -23,17 +20,13 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     private Button gridview_id;
     private Button recycler_id;
     private Button coordinatorLayout;
-    private Button hot_repair;
     private Button sliding;
     private Button drawlayout;
     private Button slidemenu;
-    private Button bigBitmap;
     private Button touchListen;
-    private Button retrofit;
-    private Button rx_java;
     private Button webview_music;
 
-    private Button fragment, map_btn, surfaceview, drawView, myseekBar, touchlove, lottie, simcode, camera2btn, camerabtn, tth, windowmanger, six_principle,longimage;
+    private Button  map_btn, surfaceview, drawView, myseekBar, touchlove, camera2btn, camerabtn, tth, six_principle,longimage;
 
 
     private Intent intent;
@@ -53,25 +46,18 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         recycler_id = (Button) findViewById(R.id.recycler_id);
         gridview_id = (Button) findViewById(R.id.gridview_id);
         coordinatorLayout = (Button) findViewById(R.id.coordinatorLayout);
-        hot_repair = (Button) findViewById(R.id.hot_repair);
         sliding = (Button) findViewById(R.id.sliding);
         drawlayout = (Button) findViewById(R.id.drawlayout);
         slidemenu = (Button) findViewById(R.id.slidemenu);
-        bigBitmap = (Button) findViewById(R.id.bigBitmap);
         touchListen = (Button) findViewById(R.id.touchListen);
-        retrofit = (Button) findViewById(R.id.retrofit);
-        rx_java = (Button) findViewById(R.id.rx_java);
-        fragment = (Button) findViewById(R.id.fragment);
         surfaceview = (Button) findViewById(R.id.surfaceview);
         drawView = (Button) findViewById(R.id.drawView);
         myseekBar = (Button) findViewById(R.id.myseekBar);
         touchlove = (Button) findViewById(R.id.touchlove);
-        lottie = (Button) findViewById(R.id.lottie);
-        simcode = (Button) findViewById(R.id.simcode);
+
         camera2btn = (Button) findViewById(R.id.camera2btn);
         camerabtn = (Button) findViewById(R.id.camerabtn);
         tth = (Button) findViewById(R.id.tth);
-        windowmanger = (Button) findViewById(R.id.windowmanger);
         six_principle = (Button) findViewById(R.id.six_principle);
         map_btn = (Button) findViewById(R.id.map_btn);
         webview_music = (Button) findViewById(R.id.webview_music);
@@ -82,25 +68,17 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         gridview_id.setOnClickListener(this);
         recycler_id.setOnClickListener(this);
         coordinatorLayout.setOnClickListener(this);
-        hot_repair.setOnClickListener(this);
         sliding.setOnClickListener(this);
         drawlayout.setOnClickListener(this);
         slidemenu.setOnClickListener(this);
-        bigBitmap.setOnClickListener(this);
         touchListen.setOnClickListener(this);
-        retrofit.setOnClickListener(this);
-        rx_java.setOnClickListener(this);
-        fragment.setOnClickListener(this);
         surfaceview.setOnClickListener(this);
         drawView.setOnClickListener(this);
         myseekBar.setOnClickListener(this);
         touchlove.setOnClickListener(this);
-        lottie.setOnClickListener(this);
-        simcode.setOnClickListener(this);
-        camera2btn.setOnClickListener(this);
+               camera2btn.setOnClickListener(this);
         camerabtn.setOnClickListener(this);
         tth.setOnClickListener(this);
-        windowmanger.setOnClickListener(this);
         six_principle.setOnClickListener(this);
         webview_music.setOnClickListener(this);
         longimage.setOnClickListener(this);
@@ -128,10 +106,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 intent.setClass(this, MapActivity.class);
                 startActivity(intent);
                 break;
-            case R.id.hot_repair:
-                intent.setClass(this, HotRepairActivity.class);
-                startActivity(intent);
-                break;
+
 
             case R.id.sliding:
                 intent.setClass(this, SlidingDrawerActivity.class);
@@ -148,26 +123,11 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 startActivity(intent);
                 break;
 
-            case R.id.bigBitmap:
-                intent.setClass(this, BigBitMapActivity.class);
-                startActivity(intent);
-                break;
             case R.id.touchListen:
                 intent.setClass(this, TouchListenActivity.class);
                 startActivity(intent);
                 break;
-            case R.id.retrofit:
-                intent.setClass(this, RetrofitActivity.class);
-                startActivity(intent);
-                break;
-            case R.id.rx_java:
-                intent.setClass(this, LrucatchActivity.class);
-                startActivity(intent);
-                break;
-            case R.id.fragment:
-                intent.setClass(this, FragmentActivity.class);
-                IntentUtils.getInstance().startActivity(this, intent);
-                break;
+
             case R.id.surfaceview:
                 intent.setClass(this, SurfaceViewActivity.class);
                 IntentUtils.getInstance().startActivity(this, intent);
@@ -184,14 +144,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 intent.setClass(this, TestPraiseActivity.class);
                 startActivity(intent);
                 break;
-            case R.id.lottie:
-                intent.setClass(this, LottieActivity.class);
-                startActivity(intent);
-                break;
-            case R.id.simcode:
-                intent.setClass(this, SIMCodeActivity.class);
-                startActivity(intent);
-                break;
+
             case R.id.camera2btn:
                 BaseActivity.requestPermissionss(new String[]{Manifest.permission.CAMERA}, new PermissionListener() {
 
@@ -227,10 +180,6 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 break;
             case R.id.tth:
                 intent.setClass(this, TTHActivity.class);
-                startActivity(intent);
-                break;
-            case R.id.windowmanger:
-                intent.setClass(this, WinowMangerActivity.class);
                 startActivity(intent);
                 break;
             case R.id.six_principle:

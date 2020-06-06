@@ -33,7 +33,7 @@ public class NumberPickActivity extends BaseActivity implements NumberPickerView
         startYear.add(AndroidUtils.getYear() + "");
 
         //初始化月
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < 9; i++) {
             int currentMonth = AndroidUtils.getMonth();
             currentMonth = 1;
             currentMonth = currentMonth - i;

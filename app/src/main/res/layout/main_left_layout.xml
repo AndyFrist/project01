@@ -23,12 +23,6 @@
         android:text="CoordinatorLayout" />
 
     <Button
-        android:id="@+id/hot_repair"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="热修复" />
-
-    <Button
         android:id="@+id/sliding"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -47,28 +41,11 @@
         android:text="侧滑面板slidingmenu" />
 
     <Button
-        android:id="@+id/bigBitmap"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="大图加载" />
-
-    <Button
         android:id="@+id/touchListen"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="事件分发" />
 
-    <Button
-        android:id="@+id/retrofit"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Retrofit+RxJ" />
-
-    <Button
-        android:id="@+id/rx_java"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="RxJava" />
     <Button
         android:id="@+id/map_btn"
         android:layout_width="match_parent"
@@ -79,5 +56,5 @@
         android:id="@+id/webview_music"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="地图" />
+        android:text="h5" />
 </LinearLayout>
